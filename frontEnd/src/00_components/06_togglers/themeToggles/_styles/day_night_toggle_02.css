@@ -1,0 +1,280 @@
+/* ? SIZES:
+  XS: 48 × 22px  – knob 10px  – slide 26px
+  S:  58 × 26px  – knob 14px  – slide 32px
+  M:  88 × 40px  – knob 28px  – slide 48px  (default)
+  L: 110 × 48px  – knob 36px  – slide 62px
+  XL: 132 × 58px – knob 46px  – slide 74px
+  XXL: 154 × 68px – knob 56px – slide 86px
+*/
+
+.dayNightToggle02_cnt {
+  display: inline-block;
+}
+
+.dayNightToggle02_label {
+  cursor: pointer;
+}
+
+/* ─── Base switch (non-size-specific) ─── */
+.switch {
+  position: relative;
+  display: inline-block;
+  border: 1px solid var(--theme-toggler-border);
+  border-radius: 8px; /* default: rect */
+}
+
+/* shape modifiers — applied via the `shape` prop */
+.dayNightToggle02--rect { border-radius: 8px; }
+.dayNightToggle02--oval { border-radius: 999px; }
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--theme-toggler-bg);
+  border-radius: inherit;
+  transition: 0.1s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* knob – size overrides below */
+.slider:before {
+  position: absolute;
+  content: "";
+  left: 6px;
+  bottom: 6px;
+  background-color: white;
+  transition: 0.8s;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.moons-hole {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  transition: 1s;
+}
+
+.moon-hole {
+  position: absolute;
+  border-radius: 50%;
+  transform: translateX(0px);
+}
+
+.moon-hole:nth-child(1) {
+  background-color: rgb(85, 85, 85);
+  height: 5px;
+  width: 5px;
+  top: 26px;
+  left: 20px;
+}
+
+.moon-hole:nth-child(2) {
+  background-color: rgb(85, 85, 85);
+  height: 10px;
+  width: 10px;
+  top: 16px;
+  left: 7px;
+}
+
+.moon-hole:nth-child(3) {
+  background-color: rgb(85, 85, 85);
+  height: 4px;
+  width: 4px;
+  top: 12px;
+  left: 21px;
+}
+
+input:checked + .slider {
+  background-color: #62cff0;
+}
+
+input:checked + .slider .moons-hole {
+  opacity: 0;
+}
+
+.stars {
+  right: 6px;
+  top: 0;
+  bottom: 0;
+  transition: 1s;
+  transform: translateY(0px);
+}
+
+.star {
+  position: absolute;
+  fill: white;
+  animation: star-twinkle 2s infinite;
+  opacity: 1;
+}
+
+.star:nth-child(1) {
+  top: 5px;
+  right: 29px;
+  width: 20px;
+  animation-delay: 0.3s;
+}
+
+.star:nth-child(2) {
+  top: 18px;
+  right: 9px;
+  width: 15px;
+}
+
+.star:nth-child(3) {
+  top: 5px;
+  right: 15px;
+  width: 10px;
+  animation-delay: 0.6s;
+}
+
+.star:nth-child(4) {
+  top: 26px;
+  right: 28px;
+  width: 12px;
+  animation-delay: 0.9s;
+}
+
+.star:nth-child(5) {
+  top: 2px;
+  right: 50px;
+  width: 8px;
+  animation-delay: 1.2s;
+}
+
+input:checked + .slider .stars {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+@keyframes star-twinkle {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.2); }
+  80%  { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+
+.clouds {
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  transition: 1s;
+  transform: translateX(-55px);
+}
+
+.black-clouds {
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  transition: 1s;
+  transform: translateX(-55px);
+  opacity: 0;
+  z-index: 0;
+}
+
+.black-cloud {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #555;
+  opacity: 60%;
+  border-radius: 50%;
+  animation: cloud-move 6s infinite;
+  animation-delay: 1s;
+}
+
+.black-cloud:nth-child(1) { top: 1px;  right: 3px; }
+.black-cloud:nth-child(2) { top: 15px; left: 9px;  }
+.black-cloud:nth-child(3) { top: 20px; left: 27px; }
+
+input:checked + .slider .black-clouds {
+  transform: translateX(32px);
+  opacity: 1;
+}
+
+.cloud {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 1;
+  animation: cloud-move 6s infinite;
+}
+
+.cloud:nth-child(1) { top: 0;    height: 21px; width: 21px; right: 14px; }
+.cloud:nth-child(2) { height: 25px; width: 25px; top: 14px; right: 6px;  }
+.cloud:nth-child(3) { height: 23px; width: 23px; top: 28px; left: 4px;   }
+.cloud:nth-child(4) { top: 26px; left: 20px; }
+.cloud:nth-child(5) { top: 30px; left: 30px; }
+.cloud:nth-child(6) { top: 27px; left: 46px; }
+.cloud:nth-child(7) { top: 31px; left: 58px; }
+
+input:checked + .slider .clouds {
+  transform: translateX(32px);
+  opacity: 1;
+}
+
+@keyframes cloud-move {
+  0%   { transform: translateX(-32px); }
+  40%  { transform: translateX(-36px); }
+  80%  { transform: translateX(-28px); }
+  100% { transform: translateX(-32px); }
+}
+
+/* ══════════════════════════════════════════
+   SIZE SYSTEM  (track → knob → translateX)
+   padding = 6px on all sides
+   knob    = height − 12
+   slide   = width  − knob − 12
+   ══════════════════════════════════════════ */
+
+/* ! Size: XS  48 × 22 */
+.XS_dayNightToggle02_label { width: 48px;  height: 22px; }
+.XS_dayNightToggle02_label .slider:before { width: 10px; height: 10px; bottom: 6px; }
+.XS_dayNightToggle02_label input:checked + .slider:before { transform: translateX(26px); background-color: orange; }
+.XS_dayNightToggle02_label input:checked + .slider .moons-hole { transform: translateX(26px); }
+
+/* ! Size: S   58 × 26  (~12% smaller than original 66 × 30) */
+.S_dayNightToggle02_label { width: 58px;   height: 26px; }
+.S_dayNightToggle02_label .slider:before { width: 14px; height: 14px; bottom: 6px; }
+.S_dayNightToggle02_label input:checked + .slider:before { transform: translateX(32px); background-color: orange; }
+.S_dayNightToggle02_label input:checked + .slider .moons-hole { transform: translateX(32px); }
+
+/* ! Size: M   88 × 40  (default) */
+.M_dayNightToggle02_label { width: 88px;   height: 40px; }
+.M_dayNightToggle02_label .slider:before { width: 28px; height: 28px; bottom: 6px; }
+.M_dayNightToggle02_label input:checked + .slider:before { transform: translateX(48px); background-color: orange; }
+.M_dayNightToggle02_label input:checked + .slider .moons-hole { transform: translateX(48px); }
+
+/* ! Size: L   110 × 48 */
+.L_dayNightToggle02_label { width: 110px;  height: 48px; }
+.L_dayNightToggle02_label .slider:before { width: 36px; height: 36px; bottom: 6px; }
+.L_dayNightToggle02_label input:checked + .slider:before { transform: translateX(62px); background-color: orange; }
+.L_dayNightToggle02_label input:checked + .slider .moons-hole { transform: translateX(62px); }
+
+/* ! Size: XL  132 × 58 */
+.XL_dayNightToggle02_label { width: 132px; height: 58px; }
+.XL_dayNightToggle02_label .slider:before { width: 46px; height: 46px; bottom: 6px; }
+.XL_dayNightToggle02_label input:checked + .slider:before { transform: translateX(74px); background-color: orange; }
+.XL_dayNightToggle02_label input:checked + .slider .moons-hole { transform: translateX(74px); }
+
+/* ! Size: XXL 154 × 68 */
+.XXL_dayNightToggle02_label { width: 154px; height: 68px; }
+.XXL_dayNightToggle02_label .slider:before { width: 56px; height: 56px; bottom: 6px; }
+.XXL_dayNightToggle02_label input:checked + .slider:before { transform: translateX(86px); background-color: orange; }
+.XXL_dayNightToggle02_label input:checked + .slider .moons-hole { transform: translateX(86px); }

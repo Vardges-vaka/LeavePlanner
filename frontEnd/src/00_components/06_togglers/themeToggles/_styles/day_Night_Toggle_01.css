@@ -1,0 +1,161 @@
+/*  ? SIZES: 
+"XS": 20
+"S": 30, 
+"M": 50, 
+"L": 65, 
+"XL": 90, 
+"XXL": 115 
+ */
+
+.dayNightToggle01_cnt {
+  display: inline-block;
+}
+.XS_dayNightToggle01_label,
+.S_dayNightToggle01_label,
+.L_dayNightToggle01_label,
+.XL_dayNightToggle01_label,
+.XXL_dayNightToggle01_label,
+.M_dayNightToggle01_label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 50px;
+  height: 50px; */
+  border-radius: 999px;
+  background-color: var(--theme-toggler-bg);
+  color: var(--theme-toggler-icon);
+  cursor: pointer;
+}
+
+.sunMoonToggler .dayNightToggle01_input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.sunMoonToggler svg {
+  width: 80%;
+  height: 80%;
+  transition: transform 0.4s ease;
+  transform: rotate(40deg);
+}
+
+.sunMoonToggler svg .sunMoon {
+  transform-origin: center center;
+  transition: inherit;
+  transform: scale(1);
+}
+
+.sunMoonToggler svg .sunDot {
+  transform-origin: center center;
+  transform: scale(0);
+}
+
+.sunMoonToggler svg mask > circle {
+  transition: transform 0.64s cubic-bezier(0.41, 0.64, 0.32, 1.575);
+  transform: translate(0px, 0px);
+}
+
+.sunMoonToggler svg .sunDot2 {
+  animation-delay: 0.05s;
+}
+.sunMoonToggler svg .sunDot3 {
+  animation-delay: 0.1s;
+}
+.sunMoonToggler svg .sunDot4 {
+  animation-delay: 0.17s;
+}
+.sunMoonToggler svg .sunDot5 {
+  animation-delay: 0.25s;
+}
+.sunMoonToggler svg .sunDot6 {
+  animation-delay: 0.29s;
+}
+
+.sunMoonToggler .dayNightToggle01_input :checked + svg {
+  transform: rotate(90deg);
+}
+.sunMoonToggler .dayNightToggle01_input:checked + svg mask > circle {
+  transform: translate(16px, -3px);
+}
+.sunMoonToggler .dayNightToggle01_input:checked + svg .sunMoon {
+  transform: scale(0.55);
+}
+.sunMoonToggler .dayNightToggle01_input:checked + svg .sunDot {
+  animation: showRay1832 0.4s ease 0s 1 forwards;
+}
+
+/* ! Size: XS */
+.XS_dayNightToggle01_label {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* .SVG_XS {
+  width: 70% !important;
+  height: 70% !important;
+} */
+/* -------------------------------- */
+/* ! Size: S */
+.S_dayNightToggle01_label {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+/* .SVG_S {
+  width: 70% !important;
+  height: 70% !important;
+} */
+/* -------------------------------- */
+/* ! Size: M */
+.M_dayNightToggle01_label {
+  width: 50px !important;
+  height: 50px !important;
+}
+/* .SVG_M {
+  width: 100% !important;
+  height: 100% !important;
+} */
+/* -------------------------------- */
+/* ! Size: L */
+.L_dayNightToggle01_label {
+  width: 65px !important;
+  height: 65px !important;
+}
+/* .SVG_L {
+  width: 70% !important;
+  height: 70% !important;
+} */
+/* -------------------------------- */
+/* ! Size: XL */
+.XL_dayNightToggle01_label {
+  width: 90px !important;
+  height: 90px !important;
+}
+/* .SVG_XL {
+  width: 70% !important;
+  height: 70% !important;
+} */
+/* -------------------------------- */
+/* ! Size: XXL */
+.XXL_dayNightToggle01_label {
+  width: 115px !important;
+  height: 115px !important;
+}
+
+/* .SVG_XXL {
+  width: 70% !important;
+  height: 70% !important;
+} */
+
+@keyframes showRay1832 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

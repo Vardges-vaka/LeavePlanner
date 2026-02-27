@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Home",
+    "login": "Sign In",
+    "logout": "Sign Out",
+    "dashboard": "Dashboard"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "close": "Close",
+    "search": "Search",
+    "back": "Back",
+    "next": "Next",
+    "confirm": "Confirm"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light mode",
+    "dark": "Dark mode"
+  },
+  "language": {
+    "select": "Language"
+  },
+  "leave": {
+    "title": "Leave Planner",
+    "apply": "Apply for Leave",
+    "approve": "Approve",
+    "reject": "Reject",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "balance": "Leave Balance",
+    "history": "Leave History",
+    "type": "Leave Type",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "reason": "Reason",
+    "status": "Status"
+  },
+  "leaveTypes": {
+    "sick": "Sick Leave",
+    "vacation": "Vacation",
+    "personal": "Personal",
+    "maternity": "Maternity / Paternity",
+    "unpaid": "Unpaid Leave",
+    "wfh": "Work From Home",
+    "business": "Business Trip"
+  }
+}

@@ -1,0 +1,151 @@
+/* Root wrapper – positions the dropdown relative to trigger */
+.languageSelect {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+/* ── Trigger button ── */
+.languageSelect__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.65rem;
+  background-color: var(--lang-select-bg);
+  color: var(--lang-select-text);
+  border: 1px solid var(--lang-select-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.languageSelect__trigger:hover {
+  background-color: var(--lang-select-bg-hover);
+}
+
+.languageSelect__trigger:focus-visible {
+  outline: 2px solid var(--lang-select-active-text);
+  outline-offset: 2px;
+}
+
+/* ── Shared flag style ── */
+.languageSelect__flag {
+  width: 22px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* ── Language label ── */
+.languageSelect__nativeLabel {
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* ── Arrow chevron ── */
+.languageSelect__arrow {
+  font-size: 0.8rem;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  color: var(--lang-select-text);
+  opacity: 0.7;
+}
+
+.languageSelect__arrow--open {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown list ── */
+.languageSelect__dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  /* Align to the start edge; flips automatically in RTL via `inset-inline-start` */
+  inset-inline-start: 0;
+  min-width: 100%;
+  background-color: var(--lang-select-bg);
+  border: 1px solid var(--lang-select-border);
+  border-radius: 10px;
+  box-shadow: var(--lang-select-shadow);
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem;
+  z-index: 999;
+
+  /* Slide-in animation */
+  animation: langDropdownIn 0.18s ease forwards;
+}
+
+@keyframes langDropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Individual option ── */
+.languageSelect__option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--lang-select-text);
+  border-left: 2px solid transparent;
+  transition:
+    background-color 0.18s ease,
+    transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.languageSelect__option:hover {
+  background-color: var(--lang-select-bg-hover);
+  /* nudge the row to the right to feel interactive */
+  transform: translateX(2px);
+  border-left-color: var(--lang-select-active-text);
+}
+
+/* scale the flag up slightly on hover for extra polish */
+.languageSelect__option:hover .languageSelect__flag {
+  transform: scale(1.15);
+  transition: transform 0.18s ease;
+}
+
+.languageSelect__option:focus-visible {
+  outline: 2px solid var(--lang-select-active-text);
+  outline-offset: -2px;
+}
+
+/* Highlighted active option */
+.languageSelect__option--active {
+  background-color: var(--lang-select-active-bg);
+  color: var(--lang-select-active-text);
+  font-weight: 600;
+}
+
+/* ── RTL support: flip dropdown to right edge when dir=rtl ── */
+[dir="rtl"] .languageSelect__dropdown {
+  inset-inline-start: 0;
+}
+
+/* ── Mobile: make trigger a bit taller for touch targets ── */
+@media (max-width: 768px) {
+  .languageSelect__trigger {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .languageSelect__flag {
+    width: 24px;
+    height: 18px;
+  }
+}
