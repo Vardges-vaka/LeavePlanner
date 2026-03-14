@@ -1,0 +1,25 @@
+{
+  "auth": {
+    "signUp_success": "Registration successful",
+    "logIn_success": "Login successful",
+    "logOut_success": "Logged out successfully",
+    "invalid_access_code": "Invalid or expired access code",
+    "email_taken": "Email already registered",
+    "invalid_credentials": "Invalid email or password",
+    "token_missing": "Authentication required",
+    "token_invalid": "Session expired, please log in again",
+    "token_blacklisted": "Token has been revoked",
+    "forbidden": "You do not have permission to perform this action",
+    "code_generated": "Access code generated successfully",
+    "user_not_found": "User not found"
+  },
+  "validation": {
+    "required_field": "{{field}} is required",
+    "invalid_email": "Invalid email format",
+    "password_too_short": "Password must be at least 8 characters",
+    "invalid_dob": "Invalid date of birth",
+    "dob_future": "Date of birth cannot be in the future",
+    "invalid_boolean": "{{field}} must be true or false",
+    "invalid_role": "Invalid target role"
+  }
+}

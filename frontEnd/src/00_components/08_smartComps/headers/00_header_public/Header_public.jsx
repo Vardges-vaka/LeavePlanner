@@ -1,18 +1,52 @@
-import "./_styles/header_public.css";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { logo_light } from "../../../../_assets/_assets.index.js";
 import ThemeToggler from "../../../08_smartComps/ThemeToggler.jsx";
 import LanguageSelect from "../../../08_smartComps/LanguageSelect.jsx";
-// import { ThemeToggler, LanguageSelect } from "../../_smartComps.index.js";
+import "./_styles/header_public.css";
 
 const Header_public = () => {
+  const { t } = useTranslation("headerPublic");
+
   return (
-    <div className="header_public">
-      <aside className="header_public_aside left">Left</aside>
-      <nav className="header_public_nav">Middle</nav>
-      <aside className="header_public_aside right">
+    <header className="headerPublic">
+      {/* Brand / Logo */}
+      <Link to="/" className="headerPublic__brand">
+        <img
+          className="headerPublic__logo"
+          src={logo_light}
+          alt="Leave Planner"
+        />
+      </Link>
+
+      {/* Navigation */}
+      <nav className="headerPublic__nav">
+        <Link className="headerPublic__navLink" to="/">
+          {t("home")}
+        </Link>
+        <a className="headerPublic__navLink" href="/#features">
+          {t("features")}
+        </a>
+        <Link className="headerPublic__navLink" to="/faq">
+          {t("faq")}
+        </Link>
+        <Link className="headerPublic__navLink" to="/contact">
+          {t("contact")}
+        </Link>
+      </nav>
+
+      {/* Right-side actions */}
+      <div className="headerPublic__actions">
         <LanguageSelect />
         <ThemeToggler />
-      </aside>
-    </div>
+        <Link className="headerPublic__loginBtn" to="/t">
+          {t("login")}
+        </Link>
+        <Link className="headerPublic__ctaBtn" to="/contact">
+          {t("requestAccess")}
+        </Link>
+      </div>
+    </header>
   );
 };
 

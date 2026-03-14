@@ -13,7 +13,12 @@ const accessSchema = new mongoose.Schema(
         },
       },
       user: {
-        type: [String],
+        type: [
+          {
+            hash: { type: String, required: true },
+            assignedEmail: { type: String, required: true },
+          },
+        ],
         validate: {
           validator: function (arr) {
             return arr.length <= 50;
@@ -22,7 +27,12 @@ const accessSchema = new mongoose.Schema(
         },
       },
       admin: {
-        type: [String],
+        type: [
+          {
+            hash: { type: String, required: true },
+            assignedEmail: { type: String, required: true },
+          },
+        ],
         validate: {
           validator: function (arr) {
             return arr.length <= 25;

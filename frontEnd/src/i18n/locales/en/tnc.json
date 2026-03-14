@@ -1,0 +1,35 @@
+{
+  "title": "Terms & Conditions",
+  "lastUpdated": "Last updated: March 2026",
+  "intro": "Please read these Terms & Conditions carefully before using the Leave Planner platform.",
+  "sections": [
+    {
+      "title": "1. Acceptance of Terms",
+      "text": "By accessing and using Leave Planner, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use the service."
+    },
+    {
+      "title": "2. Use of Service",
+      "text": "Leave Planner is provided for employee leave management purposes only. You agree to use the platform in accordance with all applicable laws and your organization's policies. Unauthorized use, including attempting to access data belonging to other users, is strictly prohibited."
+    },
+    {
+      "title": "3. User Accounts",
+      "text": "Access to Leave Planner is granted via access codes provided by your organization's administrator. You are responsible for maintaining the confidentiality of your login credentials and for all activities under your account."
+    },
+    {
+      "title": "4. Data & Privacy",
+      "text": "Your personal data is handled in accordance with our Privacy Policy. We implement industry-standard encryption, role-based access control, and SSO integration to protect your information."
+    },
+    {
+      "title": "5. Service Availability",
+      "text": "We strive to maintain 99.9% uptime. However, scheduled maintenance or unforeseen outages may temporarily affect availability. We will provide advance notice when possible."
+    },
+    {
+      "title": "6. Limitation of Liability",
+      "text": "Leave Planner is provided 'as is'. We are not liable for indirect, incidental, or consequential damages arising from the use of this service."
+    },
+    {
+      "title": "7. Changes to Terms",
+      "text": "We reserve the right to update these Terms at any time. Continued use of the platform after changes constitutes acceptance of the updated Terms."
+    }
+  ]
+}

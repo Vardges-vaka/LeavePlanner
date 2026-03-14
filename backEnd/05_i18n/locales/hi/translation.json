@@ -1,0 +1,25 @@
+{
+  "auth": {
+    "signUp_success": "पंजीकरण सफल",
+    "logIn_success": "लॉगिन सफल",
+    "logOut_success": "सफलतापूर्वक लॉग आउट किया गया",
+    "invalid_access_code": "अमान्य या समाप्त एक्सेस कोड",
+    "email_taken": "ईमेल पहले से पंजीकृत है",
+    "invalid_credentials": "अमान्य ईमेल या पासवर्ड",
+    "token_missing": "प्रमाणीकरण आवश्यक है",
+    "token_invalid": "सत्र समाप्त हो गया, कृपया फिर से लॉग इन करें",
+    "token_blacklisted": "टोकन रद्द कर दिया गया है",
+    "forbidden": "आपको यह कार्य करने की अनुमति नहीं है",
+    "code_generated": "एक्सेस कोड सफलतापूर्वक बनाया गया",
+    "user_not_found": "उपयोगकर्ता नहीं मिला"
+  },
+  "validation": {
+    "required_field": "{{field}} आवश्यक है",
+    "invalid_email": "अमान्य ईमेल प्रारूप",
+    "password_too_short": "पासवर्ड कम से कम 8 अक्षर का होना चाहिए",
+    "invalid_dob": "अमान्य जन्म तिथि",
+    "dob_future": "जन्म तिथि भविष्य में नहीं हो सकती",
+    "invalid_boolean": "{{field}} सही या गलत होना चाहिए",
+    "invalid_role": "अमान्य लक्ष्य भूमिका"
+  }
+}

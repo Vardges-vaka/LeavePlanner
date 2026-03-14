@@ -1,0 +1,38 @@
+{
+  "title": "Frequently Asked Questions",
+  "subtitle": "Find answers to common questions about Leave Planner.",
+  "items": [
+    {
+      "q": "What is Leave Planner?",
+      "a": "Leave Planner is a centralized web-based platform that automates employee leave requesting, tracking, approval workflows, and reporting — replacing manual spreadsheets and emails."
+    },
+    {
+      "q": "What leave types are supported?",
+      "a": "We support Sick Leave, Vacation, Personal, Maternity/Paternity, Unpaid Leave, Work From Home, Business Trips, and configurable public holidays (including UAE holidays)."
+    },
+    {
+      "q": "How many employees can the system handle?",
+      "a": "Leave Planner is built for organizations of 300 to 20,000+ employees, with department-level and team-level views available in grid format."
+    },
+    {
+      "q": "Does it integrate with my calendar?",
+      "a": "Yes — approved leaves automatically sync with Outlook, Google Calendar, Slack, and other calendar systems via our integration API."
+    },
+    {
+      "q": "How does the approval workflow work?",
+      "a": "Employees submit requests, managers receive notifications and can approve or reject in under 3 clicks while viewing team availability and conflict alerts."
+    },
+    {
+      "q": "Is the system mobile-friendly?",
+      "a": "Absolutely. Leave Planner is fully responsive and works seamlessly on desktop, tablet, and mobile devices."
+    },
+    {
+      "q": "How is my data secured?",
+      "a": "We implement SSO integration, data encryption at rest, and Role-Based Access Control (RBAC) to ensure employees only see their own private data."
+    },
+    {
+      "q": "Can I export reports?",
+      "a": "Yes — department administrators and HR can export reports in CSV and PDF formats at any time."
+    }
+  ]
+}

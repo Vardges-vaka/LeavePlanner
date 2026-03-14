@@ -1,0 +1,17 @@
+{
+  "title": "संपर्क करें",
+  "subtitle": "प्रश्न हैं या एक्सेस का अनुरोध करना चाहते हैं? फॉर्म भरें और हमारी टीम 24 घंटे के भीतर आपसे संपर्क करेगी।",
+  "nameLabel": "पूरा नाम",
+  "namePlaceholder": "जॉन डो",
+  "emailLabel": "ईमेल पता",
+  "emailPlaceholder": "john@company.com",
+  "companyLabel": "कंपनी का नाम",
+  "companyPlaceholder": "एक्मे इंक.",
+  "messageLabel": "संदेश",
+  "messagePlaceholder": "अपनी टीम के आकार और आवश्यकताओं के बारे में बताएं...",
+  "successMessage": "धन्यवाद! हम जल्द ही संपर्क करेंगे।",
+  "infoTitle": "संपर्क जानकारी",
+  "infoEmail": "info@leaveplanner.com",
+  "infoPhone": "+1 (555) 123-4567",
+  "infoAddress": "123 Business Avenue, Suite 400, Dubai, UAE"
+}

@@ -14,7 +14,6 @@ const user_cntrl_createUser = async (req, res) => {
   DEBUG_LOG(debug_msg.start);
   try {
     const { success, message, data } = await service_Call(req);
-
     return validRespond_cntrl(success, message, data, DEBUG_LOG, res);
   } catch (error) {
     DEBUG_LOG(debug_msg.error_E, error);

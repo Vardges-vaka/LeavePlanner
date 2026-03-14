@@ -17,5 +17,5 @@ export const validRespond_cntrl = (success, message, data, DEBUG_LOG, res) => {
 
 export const failed_vld = (displayName, isDebug, message) => {
   consoleLog("vld", displayName, isDebug, debug_msg.error_E, null);
-  return { success: false, message: message };
+  return { isValid: false, validatorMessage: message };
 };

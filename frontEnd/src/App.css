@@ -1,11 +1,54 @@
 :root {
+  /* -- Global -- */
   --app-bg: #f3f4f6;
   --app-text: #111827;
 
+  /* -- Typography -- */
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+
+  /* -- Header -- */
+  --header-bg: #ffffff;
+  --header-border: #e5e7eb;
+  --header-link: #374151;
+  --header-link-hover: #4f46e5;
+
+  /* -- Footer -- */
+  --footer-bg: #1a1a2e;
+  --footer-text: #c4c4cc;
+  --footer-heading: #ffffff;
+  --footer-border: #2a2a3e;
+  --footer-link-hover: #818cf8;
+
+  /* -- Cards & Surfaces -- */
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --section-alt-bg: #f9fafb;
+
+  /* -- Hero -- */
+  --hero-bg: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+
+  /* -- Buttons -- */
+  --btn-cta-bg: #4f46e5;
+  --btn-login-text: #4f46e5;
+  --btn-login-border: #4f46e5;
+  --btn-login-hover-bg: #4f46e5;
+  --btn-login-hover-text: #ffffff;
+
+  /* -- CTA banner -- */
+  --cta-bg: #4f46e5;
+
+  /* -- Forms -- */
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --input-focus: #6366f1;
+
+  /* -- Theme toggler -- */
   --theme-toggler-bg: #f3f4f6;
   --theme-toggler-icon: #fc7601;
   --theme-toggler-border: #686868;
 
+  /* -- Language select -- */
   --lang-select-bg: #ffffff;
   --lang-select-bg-hover: #f0f4ff;
   --lang-select-border: #d1d5db;
@@ -13,22 +56,76 @@
   --lang-select-active-bg: #e0e7ff;
   --lang-select-active-text: #3730a3;
   --lang-select-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+
+  /* -- Feedback -- */
+  --success-bg: #d4edda;
+  --success-text: #155724;
+  --success-border: #c3e6cb;
 }
 
 [data-theme="dark"] {
-  --theme-toggler-bg: #020617;
-  --theme-toggler-icon: #fcf801;
-  --theme-toggler-border: #ff9900;
-  --app-bg: #020617;
-  --app-text: #e5e7eb;
+  /* -- Global -- */
+  --app-bg: #0f172a;
+  --app-text: #e2e8f0;
 
+  /* -- Typography -- */
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+
+  /* -- Header -- */
+  --header-bg: #1e293b;
+  --header-border: #334155;
+  --header-link: #cbd5e1;
+  --header-link-hover: #a5b4fc;
+
+  /* -- Footer -- */
+  --footer-bg: #0f172a;
+  --footer-text: #94a3b8;
+  --footer-heading: #e2e8f0;
+  --footer-border: #1e293b;
+  --footer-link-hover: #a5b4fc;
+
+  /* -- Cards & Surfaces -- */
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --section-alt-bg: #162032;
+
+  /* -- Hero -- */
+  --hero-bg: linear-gradient(135deg, #162032 0%, #1e293b 100%);
+
+  /* -- Buttons -- */
+  --btn-cta-bg: #6366f1;
+  --btn-login-text: #a5b4fc;
+  --btn-login-border: #6366f1;
+  --btn-login-hover-bg: #6366f1;
+  --btn-login-hover-text: #ffffff;
+
+  /* -- CTA banner -- */
+  --cta-bg: #312e81;
+
+  /* -- Forms -- */
+  --input-bg: #1e293b;
+  --input-border: #475569;
+  --input-focus: #818cf8;
+
+  /* -- Theme toggler -- */
+  --theme-toggler-bg: #0f172a;
+  --theme-toggler-icon: #fbbf24;
+  --theme-toggler-border: #475569;
+
+  /* -- Language select -- */
   --lang-select-bg: #1e293b;
   --lang-select-bg-hover: #2d3f5e;
   --lang-select-border: #334155;
-  --lang-select-text: #e5e7eb;
-  --lang-select-active-bg: #1e3a5f;
-  --lang-select-active-text: #93c5fd;
-  --lang-select-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --lang-select-text: #e2e8f0;
+  --lang-select-active-bg: #312e81;
+  --lang-select-active-text: #a5b4fc;
+  --lang-select-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+
+  /* -- Feedback -- */
+  --success-bg: #1a3a2a;
+  --success-text: #6ee7b7;
+  --success-border: #2d5a3d;
 }
 
 body {

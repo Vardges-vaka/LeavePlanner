@@ -1,0 +1,17 @@
+{
+  "title": "تواصل معنا",
+  "subtitle": "لديك أسئلة أو ترغب في طلب الوصول؟ أملأ النموذج وسنتواصل معك خلال 24 ساعة.",
+  "nameLabel": "الاسم الكامل",
+  "namePlaceholder": "أحمد محمد",
+  "emailLabel": "البريد الإلكتروني",
+  "emailPlaceholder": "ahmed@company.com",
+  "companyLabel": "اسم الشركة",
+  "companyPlaceholder": "شركة النموذج",
+  "messageLabel": "الرسالة",
+  "messagePlaceholder": "أخبرنا عن حجم فريقك ومتطلباتك...",
+  "successMessage": "شكرًا لك! سنتواصل معك قريبًا.",
+  "infoTitle": "معلومات الاتصال",
+  "infoEmail": "info@leaveplanner.com",
+  "infoPhone": "+1 (555) 123-4567",
+  "infoAddress": "123 Business Avenue, Suite 400, Dubai, UAE"
+}

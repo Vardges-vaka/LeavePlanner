@@ -1,0 +1,35 @@
+{
+  "title": "Privacy Policy",
+  "lastUpdated": "Last updated: March 2026",
+  "intro": "Your privacy matters to us. This policy explains how Leave Planner collects, uses, and protects your personal information.",
+  "sections": [
+    {
+      "title": "1. Information We Collect",
+      "text": "We collect information you provide during registration (name, email, date of birth) and data generated through use of the platform (leave requests, approvals, calendar data)."
+    },
+    {
+      "title": "2. How We Use Your Information",
+      "text": "Your information is used solely to operate the Leave Planner service — processing leave requests, sending notifications, generating reports, and maintaining your account."
+    },
+    {
+      "title": "3. Data Security",
+      "text": "We implement data encryption at rest, secure HTTPS connections, role-based access control (RBAC), and Single Sign-On (SSO) integration to safeguard your data."
+    },
+    {
+      "title": "4. Data Sharing",
+      "text": "We do not sell or share your personal data with third parties. Your data is only accessible to authorized personnel within your organization based on their role and permissions."
+    },
+    {
+      "title": "5. Data Retention",
+      "text": "Your data is retained for the duration of your employment with the subscribing organization. Upon request, personal data can be deleted in accordance with applicable data protection regulations."
+    },
+    {
+      "title": "6. Your Rights",
+      "text": "You have the right to access, correct, or request deletion of your personal data. Contact your organization's administrator or reach out to us at info@leaveplanner.com."
+    },
+    {
+      "title": "7. Changes to This Policy",
+      "text": "We may update this Privacy Policy periodically. Any changes will be posted on this page with an updated revision date."
+    }
+  ]
+}

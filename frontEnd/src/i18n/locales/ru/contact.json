@@ -1,0 +1,17 @@
+{
+  "title": "Свяжитесь с нами",
+  "subtitle": "Есть вопросы или хотите запросить доступ? Заполните форму, и наша команда свяжется с вами в течение 24 часов.",
+  "nameLabel": "Полное имя",
+  "namePlaceholder": "Иван Иванов",
+  "emailLabel": "Email",
+  "emailPlaceholder": "john@company.com",
+  "companyLabel": "Название компании",
+  "companyPlaceholder": "ООО «Пример»",
+  "messageLabel": "Сообщение",
+  "messagePlaceholder": "Расскажите о размере вашей команды и требованиях...",
+  "successMessage": "Спасибо! Мы свяжемся с вами в ближайшее время.",
+  "infoTitle": "Контактная информация",
+  "infoEmail": "info@leaveplanner.com",
+  "infoPhone": "+1 (555) 123-4567",
+  "infoAddress": "123 Business Avenue, Suite 400, Dubai, UAE"
+}

@@ -1,0 +1,24 @@
+{
+  "loading": "Loading...",
+  "error": "Something went wrong",
+  "save": "Save",
+  "cancel": "Cancel",
+  "submit": "Submit",
+  "close": "Close",
+  "search": "Search",
+  "back": "Back",
+  "next": "Next",
+  "confirm": "Confirm",
+  "send": "Send Message",
+  "sending": "Sending...",
+  "learnMore": "Learn More",
+  "getStarted": "Get Started",
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light mode",
+    "dark": "Dark mode"
+  },
+  "language": {
+    "select": "Language"
+  }
+}

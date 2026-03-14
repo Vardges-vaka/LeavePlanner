@@ -1,20 +1,95 @@
-.header_public {
+.headerPublic {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row !important;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 0.75rem 1.5rem;
+  background: var(--header-bg, #ffffff);
+  border-bottom: 1px solid var(--header-border, #e5e7eb);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-/* .header_public_aside .left {
 
-}
-.header_public_nav {
-} */
-.header_public_aside.right {
+.headerPublic__brand {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.headerPublic__logo {
+  height: 40px;
+  width: auto;
+}
+
+.headerPublic__nav {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .headerPublic__nav {
+    display: flex;
+  }
+}
+
+.headerPublic__navLink {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--header-link, #374151);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.headerPublic__navLink:hover {
+  color: var(--header-link-hover, #6366f1);
+}
+
+.headerPublic__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.headerPublic__loginBtn {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--btn-login-text, #4f46e5);
+  background: transparent;
+  border: 1.5px solid var(--btn-login-border, #4f46e5);
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.headerPublic__loginBtn:hover {
+  background: var(--btn-login-hover-bg, #4f46e5);
+  color: var(--btn-login-hover-text, #ffffff);
+}
+
+.headerPublic__ctaBtn {
+  display: none;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--btn-cta-bg, #4f46e5);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.headerPublic__ctaBtn:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .headerPublic__ctaBtn {
+    display: inline-flex;
+  }
 }

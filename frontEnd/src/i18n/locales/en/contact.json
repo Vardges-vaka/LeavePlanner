@@ -1,0 +1,17 @@
+{
+  "title": "Get in Touch",
+  "subtitle": "Have questions or want to request access? Fill out the form and our team will get back to you within 24 hours.",
+  "nameLabel": "Full Name",
+  "namePlaceholder": "John Doe",
+  "emailLabel": "Email Address",
+  "emailPlaceholder": "john@company.com",
+  "companyLabel": "Company Name",
+  "companyPlaceholder": "Acme Inc.",
+  "messageLabel": "Message",
+  "messagePlaceholder": "Tell us about your team size and requirements...",
+  "successMessage": "Thank you! We'll be in touch shortly.",
+  "infoTitle": "Contact Information",
+  "infoEmail": "info@leaveplanner.com",
+  "infoPhone": "+1 (555) 123-4567",
+  "infoAddress": "123 Business Avenue, Suite 400, Dubai, UAE"
+}
