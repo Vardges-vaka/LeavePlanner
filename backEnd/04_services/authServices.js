@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import crypto from "crypto";
 import {
   BCRYPT_SALT_ROUNDS,
-  SESSION_SECRET,
+  JWT_SECRET,
   JWT_EXPIRY,
 } from "../_CONFIGURATIONS/_config.index.js";
 
@@ -16,14 +16,12 @@ export const comparePassword = async (plainPassword, hashedPassword) => {
 };
 
 export const generateJWT = (payload, expiry = JWT_EXPIRY) => {
-  return jwt.sign(payload, SESSION_SECRET, {
-    expiresIn: expiry,
-  });
+  return jwt.sign(payload, JWT_SECRET, { expiresIn: expiry });
 };
 
 export const verifyJWT = (token) => {
   try {
-    return jwt.verify(token, SESSION_SECRET);
+    return jwt.verify(token, JWT_SECRET);
   } catch (error) {
     return null;
   }

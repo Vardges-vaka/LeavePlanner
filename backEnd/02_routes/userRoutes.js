@@ -3,6 +3,7 @@ import {
   auth_mw,
   role_mw,
   dataVld_mw,
+  authLimiter,
 } from "../03_middlewares/_middlewares.index.js";
 import {
   // Controllers
@@ -20,15 +21,17 @@ import {
 
 const router = Router();
 
-// Public routes
+// Public routes (rate-limited to prevent brute force)
 router.post(
   "/signup",
+  authLimiter,
   dataVld_mw(user_vld_signUpUser),
   user_cntrl_signUpUser,
 );
 
 router.post(
   "/login",
+  authLimiter,
   dataVld_mw(user_vld_logInUser),
   user_cntrl_logInUser,
 );

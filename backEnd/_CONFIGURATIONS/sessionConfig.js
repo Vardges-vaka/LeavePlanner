@@ -1,24 +1,38 @@
-import dotenv from "dotenv";
 import session from "express-session";
-dotenv.config();
+import MongoStore from "connect-mongo";
 
-const isProduction = process.env.NODE_ENV === "production";
+/**
+ * Session middleware is built lazily via createSessionMW() because
+ * ES module imports are hoisted — env vars aren't available at
+ * import-time. server.js calls dotenv first, then this factory.
+ */
+const createSessionMW = () => {
+  const isProduction = process.env.NODE_ENV === "production";
+  const SESSION_SECRET = process.env.SESSION_SECRET;
+  const MONGODB_URI = process.env.MONGODB_URI;
+  const GLOBAL_SESSION_EXPIRY =
+    parseInt(process.env.GLOBAL_SESSION_EXPIRY, 10) || 3600000;
 
-const SESSION_SECRET = process.env.SESSION_SECRET;
+  return {
+    middleware: session({
+      secret: SESSION_SECRET,
+      resave: false,
+      saveUninitialized: false,
+      store: MongoStore.create({
+        mongoUrl: MONGODB_URI,
+        collectionName: "sessions",
+        ttl: GLOBAL_SESSION_EXPIRY / 1000,
+      }),
+      cookie: {
+        secure: isProduction,
+        httpOnly: true,
+        maxAge: GLOBAL_SESSION_EXPIRY,
+        ...(isProduction && { sameSite: "none" }),
+      },
+    }),
+    GLOBAL_SESSION_EXPIRY,
+    SESSION_SECRET,
+  };
+};
 
-const GLOBAL_SESSION_EXPIRY =
-  parseInt(process.env.GLOBAL_SESSION_EXPIRY, 10) || 3600000;
-
-const session_mw = session({
-  secret: SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    secure: isProduction, //! Important for production
-    httpOnly: true,
-    maxAge: GLOBAL_SESSION_EXPIRY,
-    ...(isProduction && { sameSite: "none" }), //! Important for production
-  },
-});
-
-export { session_mw, GLOBAL_SESSION_EXPIRY, SESSION_SECRET };
+export { createSessionMW };

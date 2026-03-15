@@ -1,5 +1,4 @@
-import { debug_msg } from "./debugging/console_msg.js";
-import { consoleLog } from "./_helpers.index.js";
+import consoleLog, { debug_msg } from "./logging/logger.js";
 
 export const validRespond_cntrl = (success, message, data, DEBUG_LOG, res) => {
   if (success) {
@@ -10,7 +9,7 @@ export const validRespond_cntrl = (success, message, data, DEBUG_LOG, res) => {
   } else {
     DEBUG_LOG(debug_msg.error_E, null);
     return res
-      .status(202)
+      .status(400)
       .json({ success: false, message: message, data: data });
   }
 };

@@ -18,6 +18,7 @@ const user_cntrl_signUpUser = async (req, res) => {
     return validRespond_cntrl(success, message, data, DEBUG_LOG, res);
   } catch (error) {
     DEBUG_LOG(debug_msg.error_E, error);
+    return res.status(500).json({ success: false, message: "Internal server error", data: null });
   } finally {
     DEBUG_LOG(debug_msg.end);
   }
