@@ -1,0 +1,42 @@
+import { AUTH_routes } from "../../api_options/_api_options.index.js";
+import { apiDebugger } from "../../../03_helpers/_helpers.index.js";
+
+const displayName = AUTH_routes.signUp.DISPLAY_NAME;
+const isDebug = AUTH_routes.signUp.isDebug;
+const endpoint = AUTH_routes.signUp.ENDPOINT;
+const properties = AUTH_routes.signUp.PROPERTIES;
+
+const DEBUG = (data, operation) =>
+  apiDebugger(displayName, isDebug, endpoint, data, operation);
+
+const User_signUp = async (payload, tCommon) => {
+  DEBUG(null, "start");
+  DEBUG("start_path");
+  DEBUG(payload, "start_payload");
+
+  try {
+    const response = await fetch(endpoint, { ...properties(payload) });
+
+    DEBUG(response, "response");
+
+    const backendResponse = await response.json();
+
+    DEBUG(backendResponse, "response_json");
+
+    return {
+      success: backendResponse.success || false,
+      message: backendResponse.message || tCommon("API.success"),
+      data: backendResponse.data || null,
+    };
+  } catch (error) {
+    DEBUG(error, "error");
+    return {
+      success: false,
+      message: error.message || tCommon("API.globalError"),
+    };
+  } finally {
+    DEBUG(null, "end");
+  }
+};
+
+export default User_signUp;
