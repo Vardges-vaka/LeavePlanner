@@ -1,62 +1,20 @@
-import bcrypt from "bcryptjs";
-import User from "../../../../00_models/User.js";
-import Access from "../../../../00_models/Access.js";
-import {
-  hashPassword,
-  generateJWT,
-} from "../../../../04_services/_services.index.js";
+import { Access, User } from "../../../../00_models/_models.index.js";
+import { hashPassword } from "../../../../04_services/_services.index.js";
 import {
   consoleLog,
   debug_msg,
 } from "../../../../06_helpers/_helpers.index.js";
+import {
+  matchAccessCode,
+  ROLE_MAP,
+} from "../../user_helpers/_user_cntrl_helpers.index.js";
 
 const displayName = "user_srv_signUpUser.js";
-const REMEMBER_ME_MAX_AGE = 100 * 24 * 60 * 60 * 1000; // 100 days in ms
 
-const ROLE_MAP = {
-  superAdmin: { role: "super_admin", accessLevel: "high" },
-  admin: { role: "admin", accessLevel: "medium" },
-  user: { role: "user", accessLevel: "low" },
-};
-
-const DEBUG = (m, e, isDebug) =>
-  consoleLog("srv", displayName, isDebug, m, e);
-
-/**
- * Tries to match `plainCode` against each role's code list in the Access doc.
- * SuperAdmin: hash-only comparison.
- * Admin/User: hash + assignedEmail comparison.
- * Returns { matched, roleKey, matchIndex } or { matched: false }.
- */
-const matchAccessCode = async (accessDoc, plainCode, email) => {
-  // 1. Check superAdmin codes (no email binding)
-  for (let i = 0; i < accessDoc.newCodes.superAdmin.length; i++) {
-    const isMatch = await bcrypt.compare(plainCode, accessDoc.newCodes.superAdmin[i]);
-    if (isMatch) return { matched: true, roleKey: "superAdmin", matchIndex: i };
-  }
-
-  // 2. Check admin codes (email-bound)
-  for (let i = 0; i < accessDoc.newCodes.admin.length; i++) {
-    const entry = accessDoc.newCodes.admin[i];
-    if (entry.assignedEmail !== email) continue;
-    const isMatch = await bcrypt.compare(plainCode, entry.hash);
-    if (isMatch) return { matched: true, roleKey: "admin", matchIndex: i };
-  }
-
-  // 3. Check user codes (email-bound)
-  for (let i = 0; i < accessDoc.newCodes.user.length; i++) {
-    const entry = accessDoc.newCodes.user[i];
-    if (entry.assignedEmail !== email) continue;
-    const isMatch = await bcrypt.compare(plainCode, entry.hash);
-    if (isMatch) return { matched: true, roleKey: "user", matchIndex: i };
-  }
-
-  return { matched: false };
-};
-
-const user_srv_signUpUser = async (isDebug, req, res) => {
-  const DEBUG_LOG = (m, e) => DEBUG(m, e, isDebug);
+const user_srv_signUpUser = async (isDebug, req) => {
+  const DEBUG_LOG = (m, e) => consoleLog("srv", displayName, isDebug, m, e);
   DEBUG_LOG(debug_msg.start);
+
   try {
     const {
       accessCode,
@@ -77,13 +35,21 @@ const user_srv_signUpUser = async (isDebug, req, res) => {
     // 2. Get the singleton Access document
     const accessDoc = await Access.findOne();
     if (!accessDoc) {
-      return { success: false, message: req.t("auth.invalid_access_code"), data: null };
+      return {
+        success: false,
+        message: req.t("auth.invalid_access_code"),
+        data: null,
+      };
     }
 
     // 3. Match access code against all role lists
-    const match = await matchAccessCode(accessDoc, accessCode, email);
+    const match = await matchAccessCode(accessDoc.newCodes, accessCode, email);
     if (!match.matched) {
-      return { success: false, message: req.t("auth.invalid_access_code"), data: null };
+      return {
+        success: false,
+        message: req.t("auth.invalid_access_code"),
+        data: null,
+      };
     }
 
     const { role, accessLevel } = ROLE_MAP[match.roleKey];
@@ -100,11 +66,11 @@ const user_srv_signUpUser = async (isDebug, req, res) => {
       accessLevel,
     });
 
-    // 5. Move the used code from newCodes to usedCodes
     const usedCodeEntry = {
-      code: match.roleKey === "superAdmin"
-        ? accessDoc.newCodes.superAdmin[match.matchIndex]
-        : accessDoc.newCodes[match.roleKey][match.matchIndex].hash,
+      code:
+        match.roleKey === "superAdmin"
+          ? accessDoc.newCodes.superAdmin[match.matchIndex]
+          : accessDoc.newCodes[match.roleKey][match.matchIndex].hash,
       role,
       usedAt: new Date(),
       usedIP: req.ip,
@@ -130,28 +96,16 @@ const user_srv_signUpUser = async (isDebug, req, res) => {
 
     const sessionPayload = { id: newUser._id, role, accessLevel };
 
-    if (rememberMe) {
-      // Remember Me ON → persistent JWT cookie (100 days)
-      const token = generateJWT(sessionPayload, "100d");
-      res.cookie("token", token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-        maxAge: REMEMBER_ME_MAX_AGE,
-      });
-    }
-
-    // Always store user in session (10h expiry if no cookie, default otherwise)
-    req.session.user = sessionPayload;
-
     return {
       success: true,
       message: req.t("auth.signUp_success"),
       data: { user: userResponse },
+      sessionPayload: sessionPayload,
+      rememberMe: rememberMe,
     };
   } catch (error) {
     DEBUG_LOG(debug_msg.error_E, error);
-    return { success: false, message: error.message, data: null };
+    return { success: false, message: "error.message", data: null }; // TODO: translate
   } finally {
     DEBUG_LOG(debug_msg.end);
   }

@@ -21,9 +21,9 @@ const accessSchema = new mongoose.Schema(
         ],
         validate: {
           validator: function (arr) {
-            return arr.length <= 50;
+            return arr.length <= 100;
           },
-          message: "User codes cannot exceed 50 items",
+          message: "User codes cannot exceed 100 items",
         },
       },
       admin: {
@@ -35,18 +35,18 @@ const accessSchema = new mongoose.Schema(
         ],
         validate: {
           validator: function (arr) {
-            return arr.length <= 25;
+            return arr.length <= 100;
           },
-          message: "Admin codes cannot exceed 25 items",
+          message: "Admin codes cannot exceed 100 items",
         },
       },
       superAdmin: {
         type: [String],
         validate: {
           validator: function (arr) {
-            return arr.length <= 10;
+            return arr.length <= 100;
           },
-          message: "SuperAdmin codes cannot exceed 10 items",
+          message: "SuperAdmin codes cannot exceed 100 items",
         },
       },
     },
@@ -67,7 +67,7 @@ const accessSchema = new mongoose.Schema(
       ips: [String],
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Access = mongoose.model("Access", accessSchema);

@@ -13,6 +13,15 @@ const createSessionMW = () => {
   const GLOBAL_SESSION_EXPIRY =
     parseInt(process.env.GLOBAL_SESSION_EXPIRY, 10) || 3600000;
 
+  if (!SESSION_SECRET) {
+    if (isProduction) {
+      throw new Error("Missing SESSION_SECRET");
+    }
+    console.warn(
+      "SESSION_SECRET is missing; using an insecure default for dev.",
+    );
+  }
+
   return {
     middleware: session({
       secret: SESSION_SECRET,
@@ -27,7 +36,8 @@ const createSessionMW = () => {
         secure: isProduction,
         httpOnly: true,
         maxAge: GLOBAL_SESSION_EXPIRY,
-        ...(isProduction && { sameSite: "none" }),
+        // ...(isProduction && { sameSite: "none" }), // ? Double check this
+        sameSite: isProduction ? "none" : "lax",
       },
     }),
     GLOBAL_SESSION_EXPIRY,

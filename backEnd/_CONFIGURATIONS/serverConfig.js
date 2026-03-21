@@ -6,7 +6,8 @@ const corsOptions = {
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
+const isRequestLogging = true;
 
 const SERVER_PORT = parseInt(process.env.SERVER_PORT, 10) || 5000;
 
-export { SERVER_PORT, NODE_ENV, corsOptions };
+export { SERVER_PORT, NODE_ENV, corsOptions, isRequestLogging };

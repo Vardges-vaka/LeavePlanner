@@ -4,7 +4,7 @@
   min-height: 100vh;
 }
 
-.privacy__main {
+.privacy_main {
   flex: 1;
   max-width: 760px;
   margin: 0 auto;
@@ -12,38 +12,38 @@
   width: 100%;
 }
 
-.privacy__title {
+.privacy_title {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
   color: var(--text-primary, #111827);
   margin-bottom: 0.25rem;
 }
 
-.privacy__date {
+.privacy_date {
   font-size: 0.82rem;
   color: var(--text-secondary, #6b7280);
   margin-bottom: 1.5rem;
 }
 
-.privacy__intro {
+.privacy_intro {
   font-size: 0.95rem;
   color: var(--text-secondary, #4b5563);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
 
-.privacy__section {
+.privacy_section {
   margin-bottom: 1.75rem;
 }
 
-.privacy__sectionTitle {
+.privacy_sectionTitle {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-primary, #111827);
   margin-bottom: 0.4rem;
 }
 
-.privacy__sectionText {
+.privacy_sectionText {
   font-size: 0.9rem;
   color: var(--text-secondary, #4b5563);
   line-height: 1.7;

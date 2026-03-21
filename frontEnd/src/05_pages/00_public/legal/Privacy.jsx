@@ -10,16 +10,16 @@ const Privacy = () => {
     <div className="privacy">
       <Header_public />
 
-      <main className="privacy__main">
-        <h1 className="privacy__title">{t("title")}</h1>
-        <p className="privacy__date">{t("lastUpdated")}</p>
-        <p className="privacy__intro">{t("intro")}</p>
+      <main className="privacy_main">
+        <h1 className="privacy_title">{t("title")}</h1>
+        <p className="privacy_date">{t("lastUpdated")}</p>
+        <p className="privacy_intro">{t("intro")}</p>
 
         {Array.isArray(sections) &&
           sections.map((sec, i) => (
-            <section className="privacy__section" key={i}>
-              <h2 className="privacy__sectionTitle">{sec.title}</h2>
-              <p className="privacy__sectionText">{sec.text}</p>
+            <section className="privacy_section" key={i}>
+              <h2 className="privacy_sectionTitle">{sec.title}</h2>
+              <p className="privacy_sectionText">{sec.text}</p>
             </section>
           ))}
       </main>

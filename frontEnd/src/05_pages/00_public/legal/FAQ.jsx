@@ -17,28 +17,28 @@ const FAQ = () => {
     <div className="faq">
       <Header_public />
 
-      <main className="faq__main">
-        <h1 className="faq__title">{t("title")}</h1>
-        <p className="faq__subtitle">{t("subtitle")}</p>
+      <main className="faq_main">
+        <h1 className="faq_title">{t("title")}</h1>
+        <p className="faq_subtitle">{t("subtitle")}</p>
 
-        <div className="faq__list">
+        <div className="faq_list">
           {Array.isArray(items) &&
             items.map((item, i) => (
-              <div className="faq__item" key={i}>
+              <div className="faq_item" key={i}>
                 <button
-                  className="faq__question"
+                  className="faq_question"
                   onClick={() => toggle(i)}
                   aria-expanded={openIndex === i}
                 >
                   {item.q}
                   <span
-                    className={`faq__chevron ${openIndex === i ? "faq__chevron--open" : ""}`}
+                    className={`faq_chevron ${openIndex === i ? "faq_chevron--open" : ""}`}
                   >
                     ▼
                   </span>
                 </button>
                 {openIndex === i && (
-                  <div className="faq__answer">{item.a}</div>
+                  <div className="faq_answer">{item.a}</div>
                 )}
               </div>
             ))}

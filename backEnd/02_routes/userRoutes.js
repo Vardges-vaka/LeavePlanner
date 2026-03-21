@@ -11,11 +11,11 @@ import {
   user_cntrl_logInUser,
   user_cntrl_logOutUser,
   user_cntrl_signUpUser,
+  user_cntrl_authCheck,
 
   // Validators
   user_vld_createUser,
   user_vld_logInUser,
-  user_vld_logOutUser,
   user_vld_signUpUser,
 } from "../01_controllers/_cntrl.index.js";
 
@@ -37,20 +37,10 @@ router.post(
 );
 
 // Returns the current authenticated user (JWT cookie or session)
-router.get("/me", auth_mw, (req, res) => {
-  return res.status(200).json({
-    success: true,
-    message: "Authenticated",
-    data: { user: req.user },
-  });
-});
+router.get("/me", auth_mw, user_cntrl_authCheck);
 
 // Protected routes
-router.post(
-  "/logout",
-  auth_mw,
-  user_cntrl_logOutUser,
-);
+router.post("/logout", auth_mw, user_cntrl_logOutUser);
 
 router.post(
   "/create",

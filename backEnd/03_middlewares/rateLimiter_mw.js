@@ -18,11 +18,11 @@ export const authLimiter = rateLimit({
 
 /**
  * General API limiter — prevents abuse on all routes.
- * 100 requests per 15-minute window per IP.
+ * 1500 requests per 15-minute window per IP.
  */
 export const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 100,
+  max: 1500,
   standardHeaders: true,
   legacyHeaders: false,
   message: {

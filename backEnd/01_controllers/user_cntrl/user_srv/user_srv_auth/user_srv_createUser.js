@@ -1,4 +1,4 @@
-import Access from "../../../../00_models/Access.js";
+import { Access } from "../../../../00_models/_models.index.js";
 import {
   generateAccessCode,
   hashPassword,
@@ -10,8 +10,6 @@ import {
 
 const displayName = "user_srv_createUser.js";
 
-const DEBUG = (m, e, isDebug) => consoleLog("srv", displayName, isDebug, m, e);
-
 // Maps the caller's role to the target roles they are allowed to create
 const ALLOWED_TARGETS = {
   super_admin: ["admin"],
@@ -19,8 +17,9 @@ const ALLOWED_TARGETS = {
 };
 
 const user_srv_createUser = async (isDebug, req) => {
-  const DEBUG_LOG = (m, e) => DEBUG(m, e, isDebug);
+  const DEBUG_LOG = (m, e) => consoleLog("srv", displayName, isDebug, m, e);
   DEBUG_LOG(debug_msg.start);
+
   try {
     const { assignedEmail, targetRole } = req.body.middlewareData;
     const callerRole = req.user.role;
@@ -38,7 +37,11 @@ const user_srv_createUser = async (isDebug, req) => {
     // Store { hash, assignedEmail } in the appropriate newCodes list
     const accessDoc = await Access.findOne();
     if (!accessDoc) {
-      return { success: false, message: "Access document not found", data: null };
+      return {
+        success: false,
+        message: "Access document not found",
+        data: null,
+      };
     }
 
     accessDoc.newCodes[targetRole].push({
