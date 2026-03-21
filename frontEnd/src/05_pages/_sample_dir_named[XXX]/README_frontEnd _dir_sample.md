@@ -1,0 +1,31 @@
+```
+└── 📁_sample_dir_named[XXX](this is just the sample name.)
+    └── 📁_styles( here are the styles for the all components in the directory)
+        ├── xXX_childComponent.css( the naming convention is [componentName] first letter lowercase.css)
+        ├── xXX_component.css( the naming convention is [componentName] first letter lowercase.css)
+        ├── xXX.css( the naming convention is [componentName] first letter lowercase.css)
+    └── 📁01_XXX_comps ( here are the components for the directory)
+        └── 📁XXX_childComps ( here are the child components for the directory's components)
+            ├── _XXX_childComps.index.js( here are the index/barrel file for the child components, all the index/barrel files start with _ and end with the name of the directory followed by .index)
+            ├── XXX_childComponent.jsx
+        ├── _XXX_comps.index.js( THE BARREL/INDEX FILE)
+        ├── XXX_component.jsx
+    └── 📁02_XXX_helpers
+        ├── _XXX_helpers.index.js( THE BARREL/INDEX FILE)
+    └── 📁03_XXX_hooks ( here goes the hooks for the directory)
+        ├── _XXX_hooks.index.js( THE BARREL/INDEX FILE)
+        ├── usexXX_apiHelpers.js ( here goes the api helpers for the directory's hooks)
+        ├── usexXX_handlers.js ( here goes the handlers for the directory's hooks)
+        ├── usexXX_states.js ( here goes the states for the directory's hooks)
+        ├── usexXX.js ( This is the main hook for the directory. Here we assemble all the above hooks and return everything from this file. )
+    └── 📁04_XXX_vld( here goes the validation files for the directory)
+        ├── _XXX_vld.index.js( THE BARREL/INDEX FILE)
+    └── 📁05_XXX_cnst( here goes the constants files for the directory)
+        ├── _XXX_cnst.index.js( THE BARREL/INDEX FILE)
+    └── 📁06_XXX_memo( here goes the memoization files for the directory, like the Comparison functions that are called when using the React.memo)
+        ├── _XXX_memo.index.js( THE BARREL/INDEX FILE)
+    └── 📁07_XXX_test( here goes the test files for the directory)
+        ├── _XXX_test.index.js( THE BARREL/INDEX FILE)
+    ├── XXX.config.js( here goes the config details for the directory, like, here we define if `isDebug` is true or not for components, for validations, for hooks, etc.)
+    └── XXX.jsx(Main Parent Component for the directory)
+```
