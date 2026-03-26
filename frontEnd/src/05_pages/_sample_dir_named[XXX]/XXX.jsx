@@ -25,7 +25,7 @@
 //   - CSS (own styles) → from _styles/:              _styles/xXX.css
 //   - NEVER import directly from a component/hook file. Always go through barrels.
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 8 (compProps), Section 15 (full example)
+// SEE: .cursor/Directory_Architecture.md → Section 8 (compProps), Section 15 (full example)
 // ============================================================================
 
 import { useXXX } from "./03_XXX_hooks/_XXX_hooks.index.js";

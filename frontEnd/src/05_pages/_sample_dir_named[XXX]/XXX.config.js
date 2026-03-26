@@ -18,7 +18,7 @@
 //   All flags MUST be false in committed code.
 //   Developers flip them to true locally while debugging, then reset before committing.
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 12
+// SEE: .cursor/Directory_Architecture.md → Section 12
 // ============================================================================
 
 export const XXX_UI_debug = false;     // UI components (XXX.jsx, XXX_YYY.jsx, XXX_YYY_ZZZ.jsx)

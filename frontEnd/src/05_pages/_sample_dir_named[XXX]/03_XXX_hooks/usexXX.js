@@ -31,7 +31,7 @@
 //   - Components NEVER call useTranslation() themselves.
 //   - Pass t, tCommon, etc. down through compProps.
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 7.2 (File 4), Section 8, Section 9
+// SEE: .cursor/Directory_Architecture.md → Section 7.2 (File 4), Section 8, Section 9
 // ============================================================================
 
 import { useTranslation } from "react-i18next";

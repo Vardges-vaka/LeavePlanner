@@ -16,5 +16,5 @@
 //   export { testXXX_YYY } from "./testXXX_YYY.js";
 //   export { testUseXXX } from "./testUseXXX.js";
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 4, Section 11
+// SEE: .cursor/Directory_Architecture.md → Section 4, Section 11
 // ============================================================================

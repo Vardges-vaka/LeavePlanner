@@ -18,7 +18,7 @@
 // USAGE (from XXX.jsx):
 //   import { useXXX } from "./03_XXX_hooks/_XXX_hooks.index.js";
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 4
+// SEE: .cursor/Directory_Architecture.md → Section 4
 // ============================================================================
 
 export { useXXX_states } from "./useXXX_states.js";

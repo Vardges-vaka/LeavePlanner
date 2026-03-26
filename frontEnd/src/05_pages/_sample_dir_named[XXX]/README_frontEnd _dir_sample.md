@@ -2,7 +2,7 @@
 
 This is a **reference sample** showing the canonical directory layout for a page in `frontEnd/src/05_pages/`. Replace `XXX` with the real page name (e.g., `Contact`), `YYY` with a component name (e.g., `ContactForm`), and `ZZZ` with a child component name (e.g., `SubmitButton`).
 
-For full rules, naming conventions, and code examples, see: `.cursor/frontEnd_dir_architector.md`
+For full rules, naming conventions, and code examples, see: `.cursor/Directory_Architecture.md`
 
 ---
 
@@ -57,7 +57,7 @@ Each file in this sample contains a **detailed header comment block** explaining
 - Naming rules for the file, its exports, and related classNames
 - What it receives (parameters/props) and what it returns
 - Import rules (where to import from, barrel-only rule)
-- Cross-references to the relevant section in `frontEnd_dir_architector.md`
+- Cross-references to the relevant section in `Directory_Architecture.md`
 
 ### Files at root level
 

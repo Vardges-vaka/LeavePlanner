@@ -24,7 +24,7 @@
 //   File:   useXXX_states.js  (use + PascalCase page name + _states)
 //   Export: useXXX_states      (named export, same as file name)
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 7.2 (File 1)
+// SEE: .cursor/Directory_Architecture.md → Section 7.2 (File 1)
 // ============================================================================
 
 import { useState } from "react";

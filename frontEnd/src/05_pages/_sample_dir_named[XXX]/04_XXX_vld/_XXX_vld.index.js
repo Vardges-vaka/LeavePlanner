@@ -21,5 +21,5 @@
 //     import { XXX_VLD_debug } from "../XXX.config.js";
 //     if (XXX_VLD_debug) console.log("validation result:", result);
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 4, Section 11, Section 12
+// SEE: .cursor/Directory_Architecture.md → Section 4, Section 11, Section 12
 // ============================================================================

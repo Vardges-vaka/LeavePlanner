@@ -21,5 +21,5 @@
 //     import { XXX_Memo_debug } from "../XXX.config.js";
 //     if (XXX_Memo_debug) console.log("XXX_YYY areEqual:", prevProps, nextProps);
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 4, Section 11, Section 12
+// SEE: .cursor/Directory_Architecture.md → Section 4, Section 11, Section 12
 // ============================================================================

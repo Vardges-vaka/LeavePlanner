@@ -27,7 +27,7 @@
 // IMPORT RULES:
 //   - Own CSS → from ../../_styles/xXX_YYY_ZZZ.css  (two levels up to reach _styles/)
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 5.3, Section 6.5
+// SEE: .cursor/Directory_Architecture.md → Section 5.3, Section 6.5
 // ============================================================================
 
 import "../../_styles/xXX_YYY_ZZZ.css";

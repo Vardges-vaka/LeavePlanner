@@ -31,7 +31,7 @@
 //   - Own CSS        → from ../_styles/xXX_YYY.css
 //   - Child comps    → from ./XXX_childComps/_XXX_childComps.index.js (barrel only)
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 5, Section 6, Section 8.5
+// SEE: .cursor/Directory_Architecture.md → Section 5, Section 6, Section 8.5
 // ============================================================================
 
 import { XXX_YYY_ZZZ } from "./XXX_childComps/_XXX_childComps.index.js";

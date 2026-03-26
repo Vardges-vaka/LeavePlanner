@@ -28,7 +28,7 @@
 //   File:   useXXX_apiHelpers.js  (use + PascalCase page name + _apiHelpers)
 //   Export: useXXX_apiHelpers      (named export, same as file name)
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 7.2 (File 2)
+// SEE: .cursor/Directory_Architecture.md → Section 7.2 (File 2)
 // ============================================================================
 
 // Example: import base API functions from the shared API layer

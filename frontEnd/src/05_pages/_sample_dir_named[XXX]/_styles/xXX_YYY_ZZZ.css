@@ -20,7 +20,7 @@
      In XXX_YYY_ZZZ.jsx:  import "../../_styles/xXX_YYY_ZZZ.css";
      (two levels up because child components live in XXX_childComps/)
 
-   SEE: .cursor/frontEnd_dir_architector.md → Section 6
+   SEE: .cursor/Directory_Architecture.md → Section 6
    ============================================================================ */
 
 .xXX_YYY_ZZZ {

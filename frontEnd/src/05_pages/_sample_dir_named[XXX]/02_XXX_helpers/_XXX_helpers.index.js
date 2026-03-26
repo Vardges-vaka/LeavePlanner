@@ -16,5 +16,5 @@
 //   export { formatXXXData } from "./formatXXXData.js";
 //   export { mapXXXResponse } from "./mapXXXResponse.js";
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 4, Section 10
+// SEE: .cursor/Directory_Architecture.md → Section 4, Section 10
 // ============================================================================

@@ -31,7 +31,7 @@
 //   File:   useXXX_handlers.js  (use + PascalCase page name + _handlers)
 //   Export: useXXX_handlers      (named export, same as file name)
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 7.2 (File 3)
+// SEE: .cursor/Directory_Architecture.md → Section 7.2 (File 3)
 // ============================================================================
 
 import { useCallback } from "react";

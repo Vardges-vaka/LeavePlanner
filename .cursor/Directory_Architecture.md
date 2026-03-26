@@ -29,12 +29,12 @@ This document is the **single source of truth** for the frontend feature/page di
 
 Throughout this document, placeholder names represent real names you will substitute when creating a page.
 
-| Placeholder | Meaning | Real Example |
-|-------------|---------|--------------|
-| **`XXX`** | The parent page / feature name (the main component and directory name) | `Contact` |
-| **`YYY`** | A component name inside the parent page | `ContactForm` |
-| **`ZZZ`** | A child component of a component (`YYY`) | `SubmitButton` |
-| **`AAA`** | A CSS class name (the local descriptor after the prefix) | `header`, `field`, `buttonPrimary` |
+| Placeholder | Meaning                                                                | Real Example                       |
+| ----------- | ---------------------------------------------------------------------- | ---------------------------------- |
+| **`XXX`**   | The parent page / feature name (the main component and directory name) | `Contact`                          |
+| **`YYY`**   | A component name inside the parent page                                | `ContactForm`                      |
+| **`ZZZ`**   | A child component of a component (`YYY`)                               | `SubmitButton`                     |
+| **`AAA`**   | A CSS class name (the local descriptor after the prefix)               | `header`, `field`, `buttonPrimary` |
 
 **Rule:** When you create a real page, replace **every** placeholder consistently. If the page is called `Contact`, then `XXX` = `Contact` everywhere — in folder names, file names, hook names, class names, props names, and barrel files.
 
@@ -91,16 +91,16 @@ frontEnd/src/05_pages/XXX/
 
 Not all directories need content, but certain ones must **always exist** with at least their barrel file.
 
-| Directory | Must Always Exist? | Must Have Content? |
-|-----------|--------------------|--------------------|
-| `_styles/` | **Yes** | Yes — at minimum `xxx.css` for the parent component |
-| `01_XXX_comps/` | **Yes** | Yes — the page always has at least one component |
-| `02_XXX_helpers/` | **Yes** | No — create the dir + barrel file even if empty |
-| `03_XXX_hooks/` | **Yes** | No — create the dir + barrel file. Only add the 4 hook files if the page needs state/logic (see Section 7) |
-| `04_XXX_vld/` | **Yes** | No — create the dir + barrel file even if empty |
-| `05_XXX_cnst/` | **Yes** | No — create the dir + barrel file even if empty |
-| `06_XXX_memo/` | **Yes** | No — create the dir + barrel file even if empty |
-| `07_XXX_test/` | **Yes** | No — create the dir + barrel file even if empty |
+| Directory         | Must Always Exist? | Must Have Content?                                                                                         |
+| ----------------- | ------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `_styles/`        | **Yes**            | Yes — at minimum `xxx.css` for the parent component                                                        |
+| `01_XXX_comps/`   | **Yes**            | Yes — the page always has at least one component                                                           |
+| `02_XXX_helpers/` | **Yes**            | No — create the dir + barrel file even if empty                                                            |
+| `03_XXX_hooks/`   | **Yes**            | No — create the dir + barrel file. Only add the 4 hook files if the page needs state/logic (see Section 7) |
+| `04_XXX_vld/`     | **Yes**            | No — create the dir + barrel file even if empty                                                            |
+| `05_XXX_cnst/`    | **Yes**            | No — create the dir + barrel file even if empty                                                            |
+| `06_XXX_memo/`    | **Yes**            | No — create the dir + barrel file even if empty                                                            |
+| `07_XXX_test/`    | **Yes**            | No — create the dir + barrel file even if empty                                                            |
 
 **Key rule:** All 8 directories (`_styles`, `01`–`07`) plus their barrel/index files must be created when scaffolding any new page, regardless of whether the page currently uses them. This guarantees a predictable structure across the entire codebase.
 
@@ -172,11 +172,11 @@ Every component file inside `01_XXX_comps/` must be prefixed with the parent pag
 XXX_YYY.jsx
 ```
 
-| Part | Meaning | Case |
-|------|---------|------|
-| `XXX` | Parent page/feature name | PascalCase |
-| `_` | Single underscore separator | — |
-| `YYY` | The component's own name | PascalCase |
+| Part  | Meaning                     | Case       |
+| ----- | --------------------------- | ---------- |
+| `XXX` | Parent page/feature name    | PascalCase |
+| `_`   | Single underscore separator | —          |
+| `YYY` | The component's own name    | PascalCase |
 
 **Real examples (parent = `Contact`):**
 
@@ -202,11 +202,11 @@ Child component file naming adds a third segment:
 XXX_YYY_ZZZ.jsx
 ```
 
-| Part | Meaning |
-|------|---------|
-| `XXX` | Parent page name |
+| Part  | Meaning                            |
+| ----- | ---------------------------------- |
+| `XXX` | Parent page name                   |
 | `YYY` | The component that uses this child |
-| `ZZZ` | The child component's own name |
+| `ZZZ` | The child component's own name     |
 
 **Real examples (parent = `Contact`, component = `ContactForm`):**
 
@@ -241,18 +241,18 @@ All CSS files for every component in the page live in the centralized `_styles/`
 
 The CSS file name is derived from the component's **full prefixed name**, converted to **lowerCamelCase**:
 
-| Component File | CSS File |
-|----------------|----------|
-| `XXX.jsx` (parent) | `xxx.css` |
-| `XXX_YYY.jsx` | `xxx_YYY.css` |
-| `XXX_YYY_ZZZ.jsx` | `xxx_YYY_ZZZ.css` |
+| Component File     | CSS File          |
+| ------------------ | ----------------- |
+| `XXX.jsx` (parent) | `xxx.css`         |
+| `XXX_YYY.jsx`      | `xxx_YYY.css`     |
+| `XXX_YYY_ZZZ.jsx`  | `xxx_YYY_ZZZ.css` |
 
 **Real examples (parent = `Contact`):**
 
-| Component File | CSS File |
-|----------------|----------|
-| `Contact.jsx` | `contact.css` |
-| `Contact_ContactForm.jsx` | `contact_ContactForm.css` |
+| Component File                         | CSS File                               |
+| -------------------------------------- | -------------------------------------- |
+| `Contact.jsx`                          | `contact.css`                          |
+| `Contact_ContactForm.jsx`              | `contact_ContactForm.css`              |
 | `Contact_ContactForm_SubmitButton.jsx` | `contact_ContactForm_SubmitButton.css` |
 
 ### 6.3 CSS import location
@@ -277,10 +277,10 @@ The root element of every component **must be a `<div>`** with a `className` tha
 
 The root className is built from the **full component hierarchy** using underscores:
 
-| Component | Root className |
-|-----------|---------------|
-| `Contact.jsx` (parent) | `contact` |
-| `Contact_ContactForm.jsx` | `contact_ContactForm` |
+| Component                              | Root className                     |
+| -------------------------------------- | ---------------------------------- |
+| `Contact.jsx` (parent)                 | `contact`                          |
+| `Contact_ContactForm.jsx`              | `contact_ContactForm`              |
 | `Contact_ContactForm_SubmitButton.jsx` | `contact_ContactForm_SubmitButton` |
 
 ```jsx
@@ -379,6 +379,7 @@ export const useContact_states = () => {
 ```
 
 **Rules:**
+
 - No side effects. Only state declarations.
 - No parameters. This hook is self-contained.
 
@@ -404,6 +405,7 @@ export const useContact_apiHelpers = (states, setters) => {
 ```
 
 **Rules:**
+
 - Typically does **not** take parameters, but **can** receive `states`, `setters`, or other dependencies when the API helpers need them (e.g., to read current state or update loading flags).
 - Document in a comment why parameters are needed if you pass them.
 
@@ -419,21 +421,28 @@ export const useContact_apiHelpers = (states, setters) => {
 import { useCallback } from "react";
 
 export const useContact_handlers = (states, setters, apiHelpers) => {
-  const handleFieldUpdate = useCallback((field, value) => {
-    setters.setForm((prev) => ({ ...prev, [field]: value }));
-  }, [setters]);
+  const handleFieldUpdate = useCallback(
+    (field, value) => {
+      setters.setForm((prev) => ({ ...prev, [field]: value }));
+    },
+    [setters],
+  );
 
-  const handleSubmit = useCallback(async (e) => {
-    e.preventDefault();
-    const result = await apiHelpers.submitContactForm();
-    if (result.success) setters.setSubmitted(true);
-  }, [apiHelpers, setters]);
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      const result = await apiHelpers.submitContactForm();
+      if (result.success) setters.setSubmitted(true);
+    },
+    [apiHelpers, setters],
+  );
 
   return { handlers: { handleFieldUpdate, handleSubmit } };
 };
 ```
 
 **Rules:**
+
 - All handlers should be wrapped with `useCallback` for performance.
 - Parameter list is flexible — pass whatever this hook needs. Just be consistent within the page.
 
@@ -464,8 +473,15 @@ export const useContact = () => {
   };
 
   const Contact_ContactForm_props = {
-    states: { form: states.form, sending: states.sending, submitted: states.submitted },
-    handlers: { handleFieldUpdate: handlers.handleFieldUpdate, handleSubmit: handlers.handleSubmit },
+    states: {
+      form: states.form,
+      sending: states.sending,
+      submitted: states.submitted,
+    },
+    handlers: {
+      handleFieldUpdate: handlers.handleFieldUpdate,
+      handleSubmit: handlers.handleSubmit,
+    },
     t,
     tCommon,
     childProps: { Contact_ContactForm_SubmitButton_props },
@@ -537,9 +553,9 @@ Contact_InfoSidebar_props
 
 ```js
 const Contact_ContactForm_props = {
-  states,      // only the states this component needs
-  handlers,    // only the handlers this component needs
-  t,           // translation function(s)
+  states, // only the states this component needs
+  handlers, // only the handlers this component needs
+  t, // translation function(s)
   childProps: {
     Contact_ContactForm_SubmitButton_props,
     Contact_ContactForm_MessageField_props,
@@ -619,7 +635,8 @@ export default Contact_ContactForm;
 
 ## 9) Translation (`t`) Passing Rule
 
-- All translation functions are extracted in the **main hook** (`useXXX.js`) using `useTranslation`.
+- If the page uses the 4-hook structure, all translation functions are extracted in the **main hook** (`useXXX.js`) using `useTranslation`.
+- If the page does **not** use the 4-hook structure, import the translation function(s) in the **parent component** (`XXX.jsx`) instead.
 - If the page needs multiple translation namespaces, extract them all in the main hook:
 
 ```js
@@ -628,7 +645,7 @@ const { t: tCommon } = useTranslation("common");
 const { t: tValidation } = useTranslation("validation");
 ```
 
-- All translation functions (`t`, `tCommon`, `tValidation`, etc.) are passed **down through props** from the main hook → parent component → components → child components.
+- All translation functions (`t`, `tCommon`, `tValidation`, etc.) are passed **down through props** from the main hook or parent component → components → child components.
 - Components **never** call `useTranslation` themselves. Translation is always received via props.
 
 ---
@@ -638,6 +655,7 @@ const { t: tValidation } = useTranslation("validation");
 **Purpose:** Pure helper functions — formatters, transformers, data mappers, small utilities specific to this page.
 
 **Rules:**
+
 - This directory + barrel file must **always** exist, even if empty.
 - Helpers are **pure functions** (no hooks, no state, no side effects).
 - Export everything from `_XXX_helpers.index.js`.
@@ -660,19 +678,23 @@ export const formatContactData = (form) => ({
 These 4 directories follow the same pattern: **always create the directory + barrel file**, add content only when needed.
 
 ### `04_XXX_vld/`
+
 - Validation and sanitization functions.
 - Example: `validateContactForm.js` — checks required fields, email format, etc.
 
 ### `05_XXX_cnst/`
+
 - Constants specific to this page.
 - Example: `CONTACT_FORM_FIELDS.js` — field definitions, dropdown options, etc.
 
 ### `06_XXX_memo/`
+
 - Custom comparison functions for `React.memo`.
 - These are the `areEqual` functions passed as the second argument to `React.memo(Component, areEqual)`.
 - Example: `Contact_ContactForm_compare.js`
 
 ### `07_XXX_test/`
+
 - Test files for this page's components, hooks, helpers, etc.
 
 ### Barrel file pattern (same for all)
@@ -694,11 +716,11 @@ Every page directory has a `XXX.config.js` file at its root. This file defines *
 
 ```js
 // Contact.config.js
-export const Contact_UI_debug = false;      // toggle console logs in UI components
-export const Contact_Hooks_debug = false;   // toggle console logs in hooks
-export const Contact_VLD_debug = false;     // toggle console logs in validation functions
-export const Contact_API_debug = false;     // toggle console logs in API helper functions
-export const Contact_Memo_debug = false;    // toggle console logs in memo comparison functions
+export const Contact_UI_debug = false; // toggle console logs in UI components
+export const Contact_Hooks_debug = false; // toggle console logs in hooks
+export const Contact_VLD_debug = false; // toggle console logs in validation functions
+export const Contact_API_debug = false; // toggle console logs in API helper functions
+export const Contact_Memo_debug = false; // toggle console logs in memo comparison functions
 ```
 
 ### Usage
@@ -776,30 +798,30 @@ If the page has only one logical feature (even if it has many components), use t
 
 A quick-reference for all naming conventions in one place.
 
-| Element | Convention | Example |
-|---------|-----------|---------|
-| **Page directory** | PascalCase | `Contact/` |
-| **Parent component file** | PascalCase, matches dir name | `Contact.jsx` |
-| **Component file** | `XXX_YYY.jsx` (PascalCase) | `Contact_ContactForm.jsx` |
-| **Child component file** | `XXX_YYY_ZZZ.jsx` (PascalCase) | `Contact_ContactForm_SubmitButton.jsx` |
-| **CSS file (parent)** | lowerCamelCase | `contact.css` |
-| **CSS file (component)** | `xxx_YYY.css` | `contact_ContactForm.css` |
-| **CSS file (child)** | `xxx_YYY_ZZZ.css` | `contact_ContactForm_SubmitButton.css` |
-| **Root className (parent)** | lowerCamelCase | `contact` |
-| **Root className (component)** | `xxx_YYY` | `contact_ContactForm` |
-| **Root className (child)** | `xxx_YYY_ZZZ` | `contact_ContactForm_SubmitButton` |
-| **Internal className** | `root_AAA` | `contact_ContactForm_field` |
-| **Barrel file** | `_XXX_<bucket>.index.js` | `_Contact_comps.index.js` |
-| **Main hook** | `useXXX.js` | `useContact.js` |
-| **State hook** | `useXXX_states.js` | `useContact_states.js` |
-| **Handler hook** | `useXXX_handlers.js` | `useContact_handlers.js` |
-| **API helper hook** | `useXXX_apiHelpers.js` | `useContact_apiHelpers.js` |
-| **Props object (component)** | `XXX_YYY_props` | `Contact_ContactForm_props` |
-| **Props object (child)** | `XXX_YYY_ZZZ_props` | `Contact_ContactForm_SubmitButton_props` |
-| **Config file** | `XXX.config.js` | `Contact.config.js` |
-| **Debug flag** | `XXX_<Layer>_debug` | `Contact_UI_debug` |
-| **Variables / functions** | camelCase | `handleSubmit`, `formatContactData` |
-| **Constants / env vars** | UPPER_SNAKE_CASE | `CONTACT_FORM_FIELDS` |
+| Element                        | Convention                     | Example                                  |
+| ------------------------------ | ------------------------------ | ---------------------------------------- |
+| **Page directory**             | PascalCase                     | `Contact/`                               |
+| **Parent component file**      | PascalCase, matches dir name   | `Contact.jsx`                            |
+| **Component file**             | `XXX_YYY.jsx` (PascalCase)     | `Contact_ContactForm.jsx`                |
+| **Child component file**       | `XXX_YYY_ZZZ.jsx` (PascalCase) | `Contact_ContactForm_SubmitButton.jsx`   |
+| **CSS file (parent)**          | lowerCamelCase                 | `contact.css`                            |
+| **CSS file (component)**       | `xxx_YYY.css`                  | `contact_ContactForm.css`                |
+| **CSS file (child)**           | `xxx_YYY_ZZZ.css`              | `contact_ContactForm_SubmitButton.css`   |
+| **Root className (parent)**    | lowerCamelCase                 | `contact`                                |
+| **Root className (component)** | `xxx_YYY`                      | `contact_ContactForm`                    |
+| **Root className (child)**     | `xxx_YYY_ZZZ`                  | `contact_ContactForm_SubmitButton`       |
+| **Internal className**         | `root_AAA`                     | `contact_ContactForm_field`              |
+| **Barrel file**                | `_XXX_<bucket>.index.js`       | `_Contact_comps.index.js`                |
+| **Main hook**                  | `useXXX.js`                    | `useContact.js`                          |
+| **State hook**                 | `useXXX_states.js`             | `useContact_states.js`                   |
+| **Handler hook**               | `useXXX_handlers.js`           | `useContact_handlers.js`                 |
+| **API helper hook**            | `useXXX_apiHelpers.js`         | `useContact_apiHelpers.js`               |
+| **Props object (component)**   | `XXX_YYY_props`                | `Contact_ContactForm_props`              |
+| **Props object (child)**       | `XXX_YYY_ZZZ_props`            | `Contact_ContactForm_SubmitButton_props` |
+| **Config file**                | `XXX.config.js`                | `Contact.config.js`                      |
+| **Debug flag**                 | `XXX_<Layer>_debug`            | `Contact_UI_debug`                       |
+| **Variables / functions**      | camelCase                      | `handleSubmit`, `formatContactData`      |
+| **Constants / env vars**       | UPPER_SNAKE_CASE               | `CONTACT_FORM_FIELDS`                    |
 
 ---
 
@@ -904,8 +926,15 @@ export const useContact = () => {
 
   // --- component props ---
   const Contact_ContactForm_props = {
-    states: { form: states.form, sending: states.sending, submitted: states.submitted },
-    handlers: { handleFieldUpdate: handlers.handleFieldUpdate, handleSubmit: handlers.handleSubmit },
+    states: {
+      form: states.form,
+      sending: states.sending,
+      submitted: states.submitted,
+    },
+    handlers: {
+      handleFieldUpdate: handlers.handleFieldUpdate,
+      handleSubmit: handlers.handleSubmit,
+    },
     t,
     tCommon,
     childProps: {
@@ -934,9 +963,7 @@ export const useContact = () => {
 
 ```jsx
 import "../_styles/contact_ContactForm.css";
-import {
-  Contact_ContactForm_SubmitButton,
-} from "./Contact_childComps/_Contact_childComps.index.js";
+import { Contact_ContactForm_SubmitButton } from "./Contact_childComps/_Contact_childComps.index.js";
 
 const Contact_ContactForm = ({ states, handlers, t, tCommon, childProps }) => {
   return (
@@ -974,8 +1001,7 @@ const Contact_ContactForm_SubmitButton = ({ states, handlers, tCommon }) => {
         className="contact_ContactForm_SubmitButton_btn"
         type="submit"
         disabled={states.sending}
-        onClick={handlers.handleSubmit}
-      >
+        onClick={handlers.handleSubmit}>
         {states.sending ? tCommon("sending") : tCommon("send")}
       </button>
     </div>

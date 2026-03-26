@@ -20,5 +20,5 @@
 //   export { XXX_FORM_FIELDS } from "./XXX_FORM_FIELDS.js";
 //   export { XXX_STATUS_OPTIONS } from "./XXX_STATUS_OPTIONS.js";
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 4, Section 11
+// SEE: .cursor/Directory_Architecture.md → Section 4, Section 11
 // ============================================================================

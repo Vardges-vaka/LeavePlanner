@@ -14,7 +14,7 @@
 //   - "comps" = the bucket name
 //   - Ends with .index.js
 //
-// SEE: .cursor/frontEnd_dir_architector.md → Section 4
+// SEE: .cursor/Directory_Architecture.md → Section 4
 // ============================================================================
 
 export { default as XXX_YYY } from "./XXX_YYY.jsx";
