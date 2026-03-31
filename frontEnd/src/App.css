@@ -28,12 +28,46 @@
   /* -- Hero -- */
   --hero-bg: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
 
-  /* -- Buttons -- */
+  /* -- Buttons (legacy) -- */
   --btn-cta-bg: #4f46e5;
   --btn-login-text: #4f46e5;
   --btn-login-border: #4f46e5;
   --btn-login-hover-bg: #4f46e5;
   --btn-login-hover-text: #ffffff;
+
+  /* -- ButtonGeneric: Primary -- */
+  --btn-primary-bg: #4f46e5;
+  --btn-primary-text: #ffffff;
+  --btn-primary-border: #4f46e5;
+  --btn-primary-hover-bg: #4338ca;
+  --btn-primary-hover-border: #4338ca;
+  --btn-primary-active-bg: #3730a3;
+  --btn-primary-spinner: #ffffff;
+  --btn-primary-focus-ring: rgba(79, 70, 229, 0.4);
+
+  /* -- ButtonGeneric: Secondary -- */
+  --btn-secondary-bg: transparent;
+  --btn-secondary-text: #4f46e5;
+  --btn-secondary-border: #4f46e5;
+  --btn-secondary-hover-bg: #eef2ff;
+  --btn-secondary-hover-border: #4338ca;
+  --btn-secondary-active-bg: #e0e7ff;
+  --btn-secondary-spinner: #4f46e5;
+  --btn-secondary-focus-ring: rgba(79, 70, 229, 0.3);
+
+  /* -- ButtonGeneric: Normal -- */
+  --btn-normal-bg: #ffffff;
+  --btn-normal-text: #374151;
+  --btn-normal-border: #d1d5db;
+  --btn-normal-hover-bg: #f9fafb;
+  --btn-normal-hover-border: #9ca3af;
+  --btn-normal-active-bg: #f3f4f6;
+  --btn-normal-spinner: #374151;
+  --btn-normal-focus-ring: rgba(107, 114, 128, 0.3);
+
+  /* -- ButtonGeneric: Tooltip -- */
+  --btn-tooltip-bg: #1f2937;
+  --btn-tooltip-text: #f9fafb;
 
   /* -- CTA banner -- */
   --cta-bg: #4f46e5;
@@ -93,12 +127,46 @@
   /* -- Hero -- */
   --hero-bg: linear-gradient(135deg, #162032 0%, #1e293b 100%);
 
-  /* -- Buttons -- */
+  /* -- Buttons (legacy) -- */
   --btn-cta-bg: #6366f1;
   --btn-login-text: #a5b4fc;
   --btn-login-border: #6366f1;
   --btn-login-hover-bg: #6366f1;
   --btn-login-hover-text: #ffffff;
+
+  /* -- ButtonGeneric: Primary -- */
+  --btn-primary-bg: #6366f1;
+  --btn-primary-text: #ffffff;
+  --btn-primary-border: #6366f1;
+  --btn-primary-hover-bg: #818cf8;
+  --btn-primary-hover-border: #818cf8;
+  --btn-primary-active-bg: #4f46e5;
+  --btn-primary-spinner: #ffffff;
+  --btn-primary-focus-ring: rgba(129, 140, 248, 0.4);
+
+  /* -- ButtonGeneric: Secondary -- */
+  --btn-secondary-bg: transparent;
+  --btn-secondary-text: #a5b4fc;
+  --btn-secondary-border: #6366f1;
+  --btn-secondary-hover-bg: #1e1b4b;
+  --btn-secondary-hover-border: #818cf8;
+  --btn-secondary-active-bg: #312e81;
+  --btn-secondary-spinner: #a5b4fc;
+  --btn-secondary-focus-ring: rgba(165, 180, 252, 0.3);
+
+  /* -- ButtonGeneric: Normal -- */
+  --btn-normal-bg: #1e293b;
+  --btn-normal-text: #e2e8f0;
+  --btn-normal-border: #475569;
+  --btn-normal-hover-bg: #334155;
+  --btn-normal-hover-border: #64748b;
+  --btn-normal-active-bg: #1e293b;
+  --btn-normal-spinner: #e2e8f0;
+  --btn-normal-focus-ring: rgba(148, 163, 184, 0.3);
+
+  /* -- ButtonGeneric: Tooltip -- */
+  --btn-tooltip-bg: #f1f5f9;
+  --btn-tooltip-text: #0f172a;
 
   /* -- CTA banner -- */
   --cta-bg: #312e81;

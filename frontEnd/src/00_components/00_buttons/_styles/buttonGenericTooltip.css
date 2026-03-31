@@ -1,0 +1,40 @@
+/* ── ButtonGenericTooltip ────────────────────────────────── */
+
+.buttonGenericTooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+  background-color: var(--btn-tooltip-bg);
+  color: var(--btn-tooltip-text);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease;
+  z-index: 10;
+}
+
+/* Caret arrow pointing down */
+.buttonGenericTooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--btn-tooltip-bg) transparent transparent transparent;
+}
+
+/* Visible state — toggled by parent */
+.buttonGenericTooltip-visible {
+  opacity: 1;
+  visibility: visible;
+}

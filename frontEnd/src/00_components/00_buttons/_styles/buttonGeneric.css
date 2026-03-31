@@ -1,0 +1,250 @@
+/* ── ButtonGeneric ───────────────────────────────────────── */
+
+/* ── Base ─────────────────────────────────────────────────── */
+.buttonGeneric {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+  overflow: hidden;
+  outline: none;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.1s ease;
+}
+
+/* ── Content wrapper (fades when loading) ────────────────── */
+.buttonGeneric_content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s ease;
+}
+
+/* ── Icon wrappers ────────────────────────────────────────── */
+.buttonGeneric_iconLeft,
+.buttonGeneric_iconRight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.buttonGeneric_iconLeft img,
+.buttonGeneric_iconRight img {
+  display: block;
+}
+
+/* ── Text ─────────────────────────────────────────────────── */
+.buttonGeneric_text {
+  white-space: nowrap;
+}
+
+/* ── Loader overlay ───────────────────────────────────────── */
+.buttonGeneric_loaderOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* ── Tooltip wrapper — relative anchor for tooltip position ─ */
+.buttonGeneric_tooltipWrap {
+  position: relative;
+  display: inline-flex;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   VERSION MODIFIERS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Primary ──────────────────────────────────────────────── */
+.buttonGeneric-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--btn-primary-border);
+}
+
+.buttonGeneric-primary:hover:not(:disabled) {
+  background-color: var(--btn-primary-hover-bg);
+  border-color: var(--btn-primary-hover-border);
+}
+
+.buttonGeneric-primary:active:not(:disabled) {
+  background-color: var(--btn-primary-active-bg);
+}
+
+.buttonGeneric-primary:focus-visible {
+  box-shadow: 0 0 0 3px var(--btn-primary-focus-ring);
+}
+
+/* ── Secondary ────────────────────────────────────────────── */
+.buttonGeneric-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border-color: var(--btn-secondary-border);
+}
+
+.buttonGeneric-secondary:hover:not(:disabled) {
+  background-color: var(--btn-secondary-hover-bg);
+  border-color: var(--btn-secondary-hover-border);
+}
+
+.buttonGeneric-secondary:active:not(:disabled) {
+  background-color: var(--btn-secondary-active-bg);
+}
+
+.buttonGeneric-secondary:focus-visible {
+  box-shadow: 0 0 0 3px var(--btn-secondary-focus-ring);
+}
+
+/* ── Normal ───────────────────────────────────────────────── */
+.buttonGeneric-normal {
+  background-color: var(--btn-normal-bg);
+  color: var(--btn-normal-text);
+  border-color: var(--btn-normal-border);
+}
+
+.buttonGeneric-normal:hover:not(:disabled) {
+  background-color: var(--btn-normal-hover-bg);
+  border-color: var(--btn-normal-hover-border);
+}
+
+.buttonGeneric-normal:active:not(:disabled) {
+  background-color: var(--btn-normal-active-bg);
+}
+
+.buttonGeneric-normal:focus-visible {
+  box-shadow: 0 0 0 3px var(--btn-normal-focus-ring);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SIZE MODIFIERS
+   ═══════════════════════════════════════════════════════════ */
+
+.buttonGeneric-xs {
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 4px;
+}
+.buttonGeneric-xs .buttonGeneric_iconLeft svg,
+.buttonGeneric-xs .buttonGeneric_iconRight svg,
+.buttonGeneric-xs .buttonGeneric_iconLeft img,
+.buttonGeneric-xs .buttonGeneric_iconRight img {
+  width: 12px;
+  height: 12px;
+}
+
+.buttonGeneric-s {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+.buttonGeneric-s .buttonGeneric_iconLeft svg,
+.buttonGeneric-s .buttonGeneric_iconRight svg,
+.buttonGeneric-s .buttonGeneric_iconLeft img,
+.buttonGeneric-s .buttonGeneric_iconRight img {
+  width: 14px;
+  height: 14px;
+}
+
+.buttonGeneric-m {
+  padding: 8px 16px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+.buttonGeneric-m .buttonGeneric_iconLeft svg,
+.buttonGeneric-m .buttonGeneric_iconRight svg,
+.buttonGeneric-m .buttonGeneric_iconLeft img,
+.buttonGeneric-m .buttonGeneric_iconRight img {
+  width: 16px;
+  height: 16px;
+}
+
+.buttonGeneric-l {
+  padding: 10px 20px;
+  font-size: 17px;
+  border-radius: 7px;
+}
+.buttonGeneric-l .buttonGeneric_iconLeft svg,
+.buttonGeneric-l .buttonGeneric_iconRight svg,
+.buttonGeneric-l .buttonGeneric_iconLeft img,
+.buttonGeneric-l .buttonGeneric_iconRight img {
+  width: 20px;
+  height: 20px;
+}
+
+.buttonGeneric-xl {
+  padding: 12px 24px;
+  font-size: 19px;
+  border-radius: 8px;
+}
+.buttonGeneric-xl .buttonGeneric_iconLeft svg,
+.buttonGeneric-xl .buttonGeneric_iconRight svg,
+.buttonGeneric-xl .buttonGeneric_iconLeft img,
+.buttonGeneric-xl .buttonGeneric_iconRight img {
+  width: 24px;
+  height: 24px;
+}
+
+.buttonGeneric-xxl {
+  padding: 14px 28px;
+  font-size: 22px;
+  border-radius: 9px;
+}
+.buttonGeneric-xxl .buttonGeneric_iconLeft svg,
+.buttonGeneric-xxl .buttonGeneric_iconRight svg,
+.buttonGeneric-xxl .buttonGeneric_iconLeft img,
+.buttonGeneric-xxl .buttonGeneric_iconRight img {
+  width: 28px;
+  height: 28px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STATE MODIFIERS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Full width ───────────────────────────────────────────── */
+.buttonGeneric-fullWidth {
+  width: 100%;
+}
+
+/* ── Loading — fade content, keep button dimensions ───────── */
+.buttonGeneric-loading .buttonGeneric_content {
+  opacity: 0.3;
+}
+
+.buttonGeneric-loading {
+  cursor: default;
+}
+
+/* ── Disabled ─────────────────────────────────────────────── */
+.buttonGeneric:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Prevent loading buttons from getting the disabled opacity  *
+ * because the loader overlay already signals the busy state. */
+.buttonGeneric-loading:disabled {
+  opacity: 1;
+}
+
+/* ── Press animation ──────────────────────────────────────── */
+.buttonGeneric:active:not(:disabled) {
+  transform: scale(0.97);
+}

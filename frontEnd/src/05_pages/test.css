@@ -1,157 +1,98 @@
+/* ── Test page — ButtonGeneric showcase ─────────────────── */
+
 .testPage {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem 1rem;
-  font-family: system-ui, -apple-system, sans-serif;
+  padding: 2rem 1.5rem 4rem;
 }
 
-.testPage__title {
-  font-size: 1.6rem;
+.testPage_heading {
+  font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
 }
 
-.testPage__status {
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
-  font-size: 0.85rem;
-  font-weight: 500;
+.testPage_subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
 }
 
-.testPage__status--loggedIn {
-  background: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
+/* ── Section ─────────────────────────────────────────────── */
+.testPage_section {
+  margin-bottom: 2.5rem;
 }
 
-.testPage__status--loggedOut {
-  background: #fff3cd;
-  color: #856404;
-  border: 1px solid #ffeeba;
-}
-
-.testPage__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .testPage__grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.testPage__card {
-  background: #fff;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 1.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-}
-
-.testPage__cardTitle {
-  font-size: 1.1rem;
+.testPage_sectionTitle {
+  font-size: 1.15rem;
   font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--card-border);
+}
+
+.testPage_sectionDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #e9ecef;
 }
 
-.testPage__field {
+/* ── Row — horizontal group of buttons ───────────────────── */
+.testPage_row {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.testPage__label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #495057;
-}
-
-.testPage__input,
-.testPage__select {
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  outline: none;
-  transition: border-color 0.15s;
-}
-
-.testPage__input:focus,
-.testPage__select:focus {
-  border-color: #4a90d9;
-  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.15);
-}
-
-.testPage__checkbox {
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-  font-size: 0.85rem;
+  gap: 12px;
+  margin-bottom: 1rem;
 }
 
-.testPage__btn {
-  width: 100%;
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 6px;
+.testPage_rowLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 80px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Card container for grouped demos ────────────────────── */
+.testPage_card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.testPage_cardTitle {
   font-size: 0.9rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.15s;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
 }
 
-.testPage__btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+/* ── Full-width demo wrapper ─────────────────────────────── */
+.testPage_fullWidthDemo {
+  max-width: 400px;
 }
 
-.testPage__btn--signup {
-  background: #28a745;
-  color: #fff;
-}
-
-.testPage__btn--login {
-  background: #007bff;
-  color: #fff;
-}
-
-.testPage__btn--logout {
-  background: #dc3545;
-  color: #fff;
-}
-
-.testPage__btn--create {
-  background: #6f42c1;
-  color: #fff;
-}
-
-.testPage__response {
-  margin-top: 1.5rem;
-}
-
-.testPage__responseTitle {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.testPage__responsePre {
-  background: #1e1e2e;
-  color: #cdd6f4;
-  padding: 1rem;
+/* ── Event log ───────────────────────────────────────────── */
+.testPage_log {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--section-alt-bg);
+  border: 1px solid var(--card-border);
   border-radius: 6px;
-  overflow-x: auto;
   font-size: 0.8rem;
-  line-height: 1.5;
-  max-height: 400px;
-  overflow-y: auto;
-  white-space: pre-wrap;
-  word-break: break-word;
+  font-family: monospace;
+  color: var(--text-secondary);
+  min-height: 1.6rem;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }

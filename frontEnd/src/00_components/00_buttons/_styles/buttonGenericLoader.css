@@ -1,0 +1,68 @@
+/* ── ButtonGenericLoader ─────────────────────────────────── */
+
+.buttonGenericLoader {
+  display: inline-block;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 50%;
+  animation: buttonGenericLoader_spin 0.7s linear infinite;
+}
+
+/* Spinner color per version — uses the same CSS vars from App.css */
+.buttonGenericLoader-primary {
+  border-top-color: var(--btn-primary-spinner);
+  border-right-color: var(--btn-primary-spinner);
+}
+
+.buttonGenericLoader-secondary {
+  border-top-color: var(--btn-secondary-spinner);
+  border-right-color: var(--btn-secondary-spinner);
+}
+
+.buttonGenericLoader-normal {
+  border-top-color: var(--btn-normal-spinner);
+  border-right-color: var(--btn-normal-spinner);
+}
+
+/* Size scaling — proportional to button size */
+.buttonGenericLoader-xs {
+  width: 12px;
+  height: 12px;
+  border-width: 1.5px;
+}
+
+.buttonGenericLoader-s {
+  width: 14px;
+  height: 14px;
+  border-width: 2px;
+}
+
+.buttonGenericLoader-m {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.buttonGenericLoader-l {
+  width: 20px;
+  height: 20px;
+  border-width: 2.5px;
+}
+
+.buttonGenericLoader-xl {
+  width: 24px;
+  height: 24px;
+  border-width: 3px;
+}
+
+.buttonGenericLoader-xxl {
+  width: 28px;
+  height: 28px;
+  border-width: 3px;
+}
+
+@keyframes buttonGenericLoader_spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
