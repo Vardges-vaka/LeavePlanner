@@ -8,7 +8,7 @@ const FAQ = lazy(() => import("../05_pages/00_public/legal/FAQ.jsx"));
 const TnC = lazy(() => import("../05_pages/00_public/legal/TnC.jsx"));
 const Privacy = lazy(() => import("../05_pages/00_public/legal/Privacy.jsx"));
 
-const Test = lazy(() => import("../05_pages/Test.jsx"));
+const Test = lazy(() => import("../05_pages/__test/Test.jsx"));
 
 const PublicRoutes = () => {
   return (

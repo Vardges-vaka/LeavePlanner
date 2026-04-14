@@ -77,6 +77,27 @@
   --input-border: #d1d5db;
   --input-focus: #6366f1;
 
+  /* -- InputGeneric -- */
+  --input-gen-label: #4b5563;
+  --input-gen-bg: #ffffff;
+  --input-gen-border: #d1d5db;
+  --input-gen-border-hover: #9ca3af;
+  --input-gen-text: #111827;
+  --input-gen-placeholder: #9ca3af;
+  --input-gen-icon: #4b5563;
+  --input-gen-icon-hover: #4f46e5;
+  --input-gen-focus-ring: rgba(79, 70, 229, 0.2);
+  --input-gen-focus-border: #4f46e5;
+  --input-gen-bg-disabled: #f3f4f6;
+  --input-gen-border-disabled: #d1d5db;
+  --input-gen-text-disabled: #9ca3af;
+  --input-gen-error-border: #ef4444;
+  --input-gen-error-hover: #dc2626;
+  --input-gen-error-ring: rgba(239, 68, 68, 0.2);
+  --input-gen-success-border: #10b981;
+  --input-gen-success-hover: #059669;
+  --input-gen-success-ring: rgba(16, 185, 129, 0.2);
+
   /* -- Theme toggler -- */
   --theme-toggler-bg: #f3f4f6;
   --theme-toggler-icon: #fc7601;
@@ -175,6 +196,27 @@
   --input-bg: #1e293b;
   --input-border: #475569;
   --input-focus: #818cf8;
+
+  /* -- InputGeneric -- */
+  --input-gen-label: #9ca3af;
+  --input-gen-bg: #1f2937;
+  --input-gen-border: #374151;
+  --input-gen-border-hover: #4b5563;
+  --input-gen-text: #f9fafb;
+  --input-gen-placeholder: #9ca3af;
+  --input-gen-icon: #9ca3af;
+  --input-gen-icon-hover: #818cf8;
+  --input-gen-focus-ring: rgba(129, 140, 248, 0.2);
+  --input-gen-focus-border: #818cf8;
+  --input-gen-bg-disabled: #111827;
+  --input-gen-border-disabled: #1f2937;
+  --input-gen-text-disabled: #6b7280;
+  --input-gen-error-border: #f87171;
+  --input-gen-error-hover: #ef4444;
+  --input-gen-error-ring: rgba(248, 113, 113, 0.2);
+  --input-gen-success-border: #34d399;
+  --input-gen-success-hover: #10b981;
+  --input-gen-success-ring: rgba(52, 211, 153, 0.2);
 
   /* -- Theme toggler -- */
   --theme-toggler-bg: #0f172a;

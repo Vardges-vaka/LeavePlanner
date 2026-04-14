@@ -1,0 +1,245 @@
+/* ═══════════════════════════════════════════════════════════════
+ *  InputGeneric Styles
+ * ═══════════════════════════════════════════════════════════════ */
+
+ .inputGeneric_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: max-content; /* Only take requested width by default */
+}
+
+.inputGeneric-fullWidth {
+  width: 100%;
+}
+
+.inputGeneric-wrapper-disabled {
+  opacity: 0.6;
+}
+
+/* ── LABEL POSITIONS ─ */
+.inputGeneric-label-top-left,
+.inputGeneric-label-bottom-left {
+  align-items: flex-start;
+}
+.inputGeneric-label-top-right,
+.inputGeneric-label-bottom-right {
+  align-items: flex-end;
+}
+.inputGeneric-label-before {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+.inputGeneric-label-after {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.inputGeneric_label {
+  font-size: 0.875rem;
+  color: var(--input-gen-label);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+/* ── INPUT CONTAINER ─ */
+.inputGeneric_container {
+  display: flex;
+  align-items: center;
+  background-color: var(--input-gen-bg);
+  border: 1px solid var(--input-gen-border);
+  border-radius: var(--radius-m, 0.375rem);
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.inputGeneric_container:hover {
+  border-color: var(--input-gen-border-hover);
+}
+
+.inputGeneric_container-focused {
+  border-color: var(--input-gen-focus-border);
+  box-shadow: 0 0 0 3px var(--input-gen-focus-ring);
+  outline: none;
+}
+
+.inputGeneric_container-disabled {
+  background-color: var(--input-gen-bg-disabled);
+  border-color: var(--input-gen-border-disabled);
+  cursor: not-allowed;
+}
+
+/* ── VALIDATION STATES ─ */
+.inputGeneric_container-error {
+  border-color: var(--input-gen-error-border);
+}
+.inputGeneric_container-error:hover {
+  border-color: var(--input-gen-error-hover);
+}
+.inputGeneric_container-focused.inputGeneric_container-error {
+  box-shadow: 0 0 0 3px var(--input-gen-error-ring);
+}
+
+.inputGeneric_container-success {
+  border-color: var(--input-gen-success-border);
+}
+.inputGeneric_container-success:hover {
+  border-color: var(--input-gen-success-hover);
+}
+.inputGeneric_container-focused.inputGeneric_container-success {
+  box-shadow: 0 0 0 3px var(--input-gen-success-ring);
+}
+
+/* ── ACTUAL INPUT TAG ─ */
+.inputGeneric_input {
+  flex: 1;
+  min-width: 0; /* allows shrinking */
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: var(--input-gen-text);
+  outline: none;
+  font-family: inherit;
+  padding: 0 0.75rem; /* Base padding, overridden by sizes */
+}
+
+.inputGeneric_input::placeholder {
+  color: var(--input-gen-placeholder);
+}
+
+.inputGeneric_input:disabled {
+  cursor: not-allowed;
+  color: var(--input-gen-text-disabled);
+}
+
+/* ── ICONS & BUTTONS ─ */
+.inputGeneric_leftIconWrapper,
+.inputGeneric_rightIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--input-gen-icon);
+}
+
+.inputGeneric_leftIconWrapper {
+  padding-left: 0.75rem;
+}
+.inputGeneric_rightIconWrapper {
+  padding-right: 0.75rem;
+}
+
+.inputGeneric_iconButton {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--input-gen-icon);
+  cursor: pointer;
+  border-radius: var(--radius-s, 0.25rem);
+  outline: none;
+  transition: color 0.15s;
+}
+
+.inputGeneric_iconButton:hover {
+  color: var(--input-gen-icon-hover);
+}
+.inputGeneric_iconButton:focus-visible {
+  box-shadow: 0 0 0 2px var(--input-gen-focus-ring);
+}
+
+.inputGeneric_iconStatic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon dimensions inside the wrapper will scale via SVG sizing */
+.inputGeneric_iconStatic svg,
+.inputGeneric_iconButton svg,
+.inputGeneric_iconStatic img,
+.inputGeneric_iconButton img {
+  width: 1.125em;
+  height: 1.125em;
+}
+
+/* ── NUMBER INPUT SPINNERS ─ */
+.inputGeneric_number-noSpinners .inputGeneric_input::-webkit-outer-spin-button,
+.inputGeneric_number-noSpinners .inputGeneric_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.inputGeneric_number-noSpinners .inputGeneric_input {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield;
+}
+
+/* ── SIZES ─ 
+   We scale the .inputGeneric_container's height and font-size,
+   and padding inside .inputGeneric_input 
+*/
+
+.inputGeneric-xs .inputGeneric_container {
+  height: 1.75rem;
+}
+.inputGeneric-xs .inputGeneric_input {
+  font-size: 0.75rem;
+  padding: 0 0.5rem;
+}
+.inputGeneric-xs .inputGeneric_leftIconWrapper { padding-left: 0.5rem; }
+.inputGeneric-xs .inputGeneric_rightIconWrapper { padding-right: 0.5rem; }
+
+.inputGeneric-s .inputGeneric_container {
+  height: 2rem;
+}
+.inputGeneric-s .inputGeneric_input {
+  font-size: 0.8125rem;
+  padding: 0 0.625rem;
+}
+.inputGeneric-s .inputGeneric_leftIconWrapper { padding-left: 0.625rem; }
+.inputGeneric-s .inputGeneric_rightIconWrapper { padding-right: 0.625rem; }
+
+.inputGeneric-m .inputGeneric_container {
+  height: 2.5rem;
+}
+.inputGeneric-m .inputGeneric_input {
+  font-size: 0.875rem;
+  padding: 0 0.75rem;
+}
+
+.inputGeneric-l .inputGeneric_container {
+  height: 3rem;
+}
+.inputGeneric-l .inputGeneric_input {
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+.inputGeneric-l .inputGeneric_leftIconWrapper { padding-left: 1rem; }
+.inputGeneric-l .inputGeneric_rightIconWrapper { padding-right: 1rem; }
+
+.inputGeneric-xl .inputGeneric_container {
+  height: 3.5rem;
+}
+.inputGeneric-xl .inputGeneric_input {
+  font-size: 1.125rem;
+  padding: 0 1.25rem;
+}
+.inputGeneric-xl .inputGeneric_leftIconWrapper { padding-left: 1.25rem; }
+.inputGeneric-xl .inputGeneric_rightIconWrapper { padding-right: 1.25rem; }
+
+.inputGeneric-xxl .inputGeneric_container {
+  height: 4rem;
+}
+.inputGeneric-xxl .inputGeneric_input {
+  font-size: 1.25rem;
+  padding: 0 1.5rem;
+}
+.inputGeneric-xxl .inputGeneric_leftIconWrapper { padding-left: 1.5rem; }
+.inputGeneric-xxl .inputGeneric_rightIconWrapper { padding-right: 1.5rem; }
