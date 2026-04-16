@@ -6,7 +6,3 @@ export * from "./05_selects/_selects.index.js";
 export * from "./06_togglers/_togglers.index.js";
 export * from "./07_modals/_modals.index.js";
 export * from "./08_smartComps/_smartComps.index.js";
-// export * from "./09_icons/_icons.index.js";
-
-
-// ButtonGeneric
