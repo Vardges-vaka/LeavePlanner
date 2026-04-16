@@ -1,0 +1,413 @@
+/* ═══════════════════════════════════════════════════════════════
+ *  File Input Styles
+ * ═══════════════════════════════════════════════════════════════ */
+
+.inputFile_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.inputFile-wrapper-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Hide native file input */
+.inputFile_input {
+  display: none;
+}
+
+/* Label */
+.inputFile_label {
+  font-size: var(--file-m-label);
+  font-weight: 500;
+  color: var(--file-label);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ *  Button Mode
+ * ═══════════════════════════════════════════════════════════════ */
+
+.inputFile_button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--file-button-bg);
+  color: var(--file-button-text);
+  border: 2px solid var(--file-button-border);
+  border-radius: 0.375rem;
+  font-size: var(--file-m-button);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inputFile_button:hover:not(:disabled) {
+  background-color: var(--file-button-hover-bg);
+  border-color: var(--file-button-hover-border);
+}
+
+.inputFile_button:disabled {
+  cursor: not-allowed;
+}
+
+.inputFile_buttonIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ *  Dropzone Mode
+ * ═══════════════════════════════════════════════════════════════ */
+
+.inputFile_dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 2px dashed var(--file-dropzone-border);
+  border-radius: 0.5rem;
+  background-color: var(--file-dropzone-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inputFile_dropzone:hover {
+  border-color: var(--file-dropzone-hover-border);
+  background-color: var(--file-dropzone-hover-bg);
+}
+
+.inputFile_dropzoneIcon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--file-dropzone-icon);
+  margin-bottom: 0.75rem;
+}
+
+.inputFile_dropzoneText {
+  margin: 0;
+  font-size: var(--file-m-dropzone-text);
+  color: var(--file-dropzone-text);
+  font-weight: 500;
+}
+
+.inputFile_dropzoneHint {
+  margin: 0.5rem 0 0 0;
+  font-size: var(--file-m-dropzone-hint);
+  color: var(--file-dropzone-hint);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ *  File List
+ * ═══════════════════════════════════════════════════════════════ */
+
+.inputFile_fileList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.inputFile_fileItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: var(--file-item-bg);
+  border: 1px solid var(--file-item-border);
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.inputFile_fileItem:hover {
+  background-color: var(--file-item-hover-bg);
+}
+
+.inputFile_fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.inputFile_fileIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--file-icon);
+  flex-shrink: 0;
+}
+
+.inputFile_fileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.inputFile_fileName {
+  font-size: var(--file-m-filename);
+  color: var(--file-filename);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inputFile_fileSize {
+  font-size: var(--file-m-filesize);
+  color: var(--file-filesize);
+}
+
+/* Progress bar */
+.inputFile_progressBar {
+  position: relative;
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--file-progress-bg);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.inputFile_progressFill {
+  height: 100%;
+  background-color: var(--file-progress-fill);
+  transition: width 0.3s ease;
+  border-radius: 0.25rem;
+}
+
+.inputFile_progressText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--file-progress-text);
+}
+
+/* Remove button */
+.inputFile_removeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem;
+  background-color: var(--file-remove-bg);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inputFile_removeButton:hover {
+  background-color: var(--file-remove-hover-bg);
+}
+
+.inputFile_removeIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--file-remove-icon);
+}
+
+.inputFile_fileItem {
+  position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ *  Validation States
+ * ═══════════════════════════════════════════════════════════════ */
+
+.inputFile-wrapper-error .inputFile_button {
+  border-color: var(--file-error-border);
+}
+
+.inputFile-wrapper-error .inputFile_dropzone {
+  border-color: var(--file-error-border);
+}
+
+.inputFile-wrapper-success .inputFile_button {
+  border-color: var(--file-success-border);
+}
+
+.inputFile-wrapper-success .inputFile_dropzone {
+  border-color: var(--file-success-border);
+}
+
+.inputFile-wrapper-warning .inputFile_button {
+  border-color: var(--file-warning-border);
+}
+
+.inputFile-wrapper-warning .inputFile_dropzone {
+  border-color: var(--file-warning-border);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ *  Size Variations
+ * ═══════════════════════════════════════════════════════════════ */
+
+/* Extra Small */
+.inputFile-xs .inputFile_label {
+  font-size: var(--file-xs-label);
+}
+
+.inputFile-xs .inputFile_button {
+  padding: 0.375rem 0.75rem;
+  font-size: var(--file-xs-button);
+}
+
+.inputFile-xs .inputFile_dropzone {
+  padding: 1rem;
+}
+
+.inputFile-xs .inputFile_dropzoneIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.inputFile-xs .inputFile_dropzoneText {
+  font-size: var(--file-xs-dropzone-text);
+}
+
+.inputFile-xs .inputFile_dropzoneHint {
+  font-size: var(--file-xs-dropzone-hint);
+}
+
+.inputFile-xs .inputFile_fileName {
+  font-size: var(--file-xs-filename);
+}
+
+.inputFile-xs .inputFile_fileSize {
+  font-size: var(--file-xs-filesize);
+}
+
+/* Small */
+.inputFile-s .inputFile_label {
+  font-size: var(--file-s-label);
+}
+
+.inputFile-s .inputFile_button {
+  padding: 0.5rem 1rem;
+  font-size: var(--file-s-button);
+}
+
+.inputFile-s .inputFile_dropzone {
+  padding: 1.5rem;
+}
+
+.inputFile-s .inputFile_dropzoneIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.inputFile-s .inputFile_dropzoneText {
+  font-size: var(--file-s-dropzone-text);
+}
+
+.inputFile-s .inputFile_dropzoneHint {
+  font-size: var(--file-s-dropzone-hint);
+}
+
+.inputFile-s .inputFile_fileName {
+  font-size: var(--file-s-filename);
+}
+
+.inputFile-s .inputFile_fileSize {
+  font-size: var(--file-s-filesize);
+}
+
+/* Medium (default) */
+.inputFile-m .inputFile_label {
+  font-size: var(--file-m-label);
+}
+
+.inputFile-m .inputFile_button {
+  font-size: var(--file-m-button);
+}
+
+.inputFile-m .inputFile_dropzoneText {
+  font-size: var(--file-m-dropzone-text);
+}
+
+.inputFile-m .inputFile_dropzoneHint {
+  font-size: var(--file-m-dropzone-hint);
+}
+
+.inputFile-m .inputFile_fileName {
+  font-size: var(--file-m-filename);
+}
+
+.inputFile-m .inputFile_fileSize {
+  font-size: var(--file-m-filesize);
+}
+
+/* Large */
+.inputFile-l .inputFile_label {
+  font-size: var(--file-l-label);
+}
+
+.inputFile-l .inputFile_button {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--file-l-button);
+}
+
+.inputFile-l .inputFile_dropzone {
+  padding: 2.5rem;
+}
+
+.inputFile-l .inputFile_dropzoneIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.inputFile-l .inputFile_dropzoneText {
+  font-size: var(--file-l-dropzone-text);
+}
+
+.inputFile-l .inputFile_dropzoneHint {
+  font-size: var(--file-l-dropzone-hint);
+}
+
+.inputFile-l .inputFile_fileName {
+  font-size: var(--file-l-filename);
+}
+
+.inputFile-l .inputFile_fileSize {
+  font-size: var(--file-l-filesize);
+}
+
+/* Extra Large */
+.inputFile-xl .inputFile_label {
+  font-size: var(--file-xl-label);
+}
+
+.inputFile-xl .inputFile_button {
+  padding: 0.875rem 1.75rem;
+  font-size: var(--file-xl-button);
+}
+
+.inputFile-xl .inputFile_dropzone {
+  padding: 3rem;
+}
+
+.inputFile-xl .inputFile_dropzoneIcon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.inputFile-xl .inputFile_dropzoneText {
+  font-size: var(--file-xl-dropzone-text);
+}
+
+.inputFile-xl .inputFile_dropzoneHint {
+  font-size: var(--file-xl-dropzone-hint);
+}
+
+.inputFile-xl .inputFile_fileName {
+  font-size: var(--file-xl-filename);
+}
+
+.inputFile-xl .inputFile_fileSize {
+  font-size: var(--file-xl-filesize);
+}

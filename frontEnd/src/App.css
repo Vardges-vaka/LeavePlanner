@@ -98,6 +98,148 @@
   --input-gen-success-hover: #059669;
   --input-gen-success-ring: rgba(16, 185, 129, 0.2);
 
+  /* -- Checkbox -- */
+  --checkbox-border: #d1d5db;
+  --checkbox-border-hover: #9ca3af;
+  --checkbox-bg: #ffffff;
+  --checkbox-bg-checked: #3b82f6;
+  --checkbox-bg-checked-hover: #2563eb;
+  --checkbox-bg-disabled: #f3f4f6;
+  --checkbox-border-disabled: #e5e7eb;
+  --checkbox-icon: #ffffff;
+  --checkbox-label: #374151;
+  --checkbox-label-disabled: #9ca3af;
+  --checkbox-focus-ring: #3b82f6;
+  --checkbox-error-border: #ef4444;
+  --checkbox-error-bg: #ef4444;
+  --checkbox-success-border: #10b981;
+  --checkbox-success-bg: #10b981;
+  --checkbox-warning-border: #f59e0b;
+  --checkbox-warning-bg: #f59e0b;
+
+  /* -- Checkbox Sizes -- */
+  --checkbox-xs-box: 1rem;
+  --checkbox-xs-icon: 0.75rem;
+  --checkbox-xs-label: 0.75rem;
+  --checkbox-s-box: 1.125rem;
+  --checkbox-s-icon: 0.875rem;
+  --checkbox-s-label: 0.8125rem;
+  --checkbox-m-box: 1.25rem;
+  --checkbox-m-icon: 1rem;
+  --checkbox-m-label: 0.875rem;
+  --checkbox-l-box: 1.5rem;
+  --checkbox-l-icon: 1.125rem;
+  --checkbox-l-label: 1rem;
+  --checkbox-xl-box: 1.75rem;
+  --checkbox-xl-icon: 1.25rem;
+  --checkbox-xl-label: 1.125rem;
+
+  /* -- Range Slider -- */
+  --range-track-bg: #e5e7eb;
+  --range-track-fill: #4f46e5;
+  --range-thumb-bg: #ffffff;
+  --range-thumb-border: #4f46e5;
+  --range-label: #374151;
+  --range-value: #4f46e5;
+  --range-value-bg: #eef2ff;
+  --range-minmax: #6b7280;
+  --range-focus-ring: rgba(79, 70, 229, 0.2);
+  --range-error-border: #ef4444;
+  --range-error-thumb: #fef2f2;
+  --range-success-border: #10b981;
+  --range-success-thumb: #f0fdf4;
+  --range-warning-border: #f59e0b;
+  --range-warning-thumb: #fffbeb;
+
+  /* -- Range Slider Sizes -- */
+  --range-xs-track-height: 0.25rem;
+  --range-xs-thumb-size: 0.875rem;
+  --range-xs-label: 0.75rem;
+  --range-xs-value: 0.75rem;
+  --range-xs-minmax: 0.625rem;
+  --range-s-track-height: 0.375rem;
+  --range-s-thumb-size: 1rem;
+  --range-s-label: 0.8125rem;
+  --range-s-value: 0.8125rem;
+  --range-s-minmax: 0.6875rem;
+  --range-m-track-height: 0.5rem;
+  --range-m-thumb-size: 1.25rem;
+  --range-m-label: 0.875rem;
+  --range-m-value: 0.875rem;
+  --range-m-minmax: 0.75rem;
+  --range-l-track-height: 0.625rem;
+  --range-l-thumb-size: 1.5rem;
+  --range-l-label: 1rem;
+  --range-l-value: 1rem;
+  --range-l-minmax: 0.875rem;
+  --range-xl-track-height: 0.75rem;
+  --range-xl-thumb-size: 1.75rem;
+  --range-xl-label: 1.125rem;
+  --range-xl-value: 1.125rem;
+  --range-xl-minmax: 1rem;
+
+  /* -- File Input -- */
+  --file-label: #374151;
+  --file-button-bg: #ffffff;
+  --file-button-text: #4f46e5;
+  --file-button-border: #4f46e5;
+  --file-button-hover-bg: #eef2ff;
+  --file-button-hover-border: #4338ca;
+  --file-dropzone-bg: #f9fafb;
+  --file-dropzone-border: #d1d5db;
+  --file-dropzone-hover-bg: #f3f4f6;
+  --file-dropzone-hover-border: #9ca3af;
+  --file-dropzone-icon: #9ca3af;
+  --file-dropzone-text: #374151;
+  --file-dropzone-hint: #6b7280;
+  --file-item-bg: #ffffff;
+  --file-item-border: #e5e7eb;
+  --file-item-hover-bg: #f9fafb;
+  --file-icon: #6b7280;
+  --file-filename: #111827;
+  --file-filesize: #6b7280;
+  --file-progress-bg: #e5e7eb;
+  --file-progress-fill: #4f46e5;
+  --file-progress-text: #ffffff;
+  --file-remove-bg: #fee2e2;
+  --file-remove-hover-bg: #fecaca;
+  --file-remove-icon: #dc2626;
+  --file-error-border: #ef4444;
+  --file-success-border: #10b981;
+  --file-warning-border: #f59e0b;
+
+  /* -- File Input Sizes -- */
+  --file-xs-label: 0.75rem;
+  --file-xs-button: 0.75rem;
+  --file-xs-dropzone-text: 0.75rem;
+  --file-xs-dropzone-hint: 0.625rem;
+  --file-xs-filename: 0.75rem;
+  --file-xs-filesize: 0.625rem;
+  --file-s-label: 0.8125rem;
+  --file-s-button: 0.8125rem;
+  --file-s-dropzone-text: 0.8125rem;
+  --file-s-dropzone-hint: 0.6875rem;
+  --file-s-filename: 0.8125rem;
+  --file-s-filesize: 0.6875rem;
+  --file-m-label: 0.875rem;
+  --file-m-button: 0.875rem;
+  --file-m-dropzone-text: 0.875rem;
+  --file-m-dropzone-hint: 0.75rem;
+  --file-m-filename: 0.875rem;
+  --file-m-filesize: 0.75rem;
+  --file-l-label: 1rem;
+  --file-l-button: 1rem;
+  --file-l-dropzone-text: 1rem;
+  --file-l-dropzone-hint: 0.875rem;
+  --file-l-filename: 1rem;
+  --file-l-filesize: 0.875rem;
+  --file-xl-label: 1.125rem;
+  --file-xl-button: 1.125rem;
+  --file-xl-dropzone-text: 1.125rem;
+  --file-xl-dropzone-hint: 1rem;
+  --file-xl-filename: 1.125rem;
+  --file-xl-filesize: 1rem;
+
   /* -- Theme toggler -- */
   --theme-toggler-bg: #f3f4f6;
   --theme-toggler-icon: #fc7601;
@@ -217,6 +359,72 @@
   --input-gen-success-border: #34d399;
   --input-gen-success-hover: #10b981;
   --input-gen-success-ring: rgba(52, 211, 153, 0.2);
+
+  /* -- Checkbox -- */
+  --checkbox-border: #374151;
+  --checkbox-border-hover: #4b5563;
+  --checkbox-bg: #1f2937;
+  --checkbox-bg-checked: #6366f1;
+  --checkbox-bg-checked-hover: #818cf8;
+  --checkbox-bg-disabled: #111827;
+  --checkbox-border-disabled: #1f2937;
+  --checkbox-icon: #ffffff;
+  --checkbox-label: #e2e8f0;
+  --checkbox-label-disabled: #6b7280;
+  --checkbox-focus-ring: #818cf8;
+  --checkbox-error-border: #f87171;
+  --checkbox-error-bg: #f87171;
+  --checkbox-success-border: #34d399;
+  --checkbox-success-bg: #34d399;
+  --checkbox-warning-border: #fbbf24;
+  --checkbox-warning-bg: #fbbf24;
+
+  /* -- Range Slider -- */
+  --range-track-bg: #374151;
+  --range-track-fill: #6366f1;
+  --range-thumb-bg: #1f2937;
+  --range-thumb-border: #6366f1;
+  --range-label: #e2e8f0;
+  --range-value: #a5b4fc;
+  --range-value-bg: #1e1b4b;
+  --range-minmax: #9ca3af;
+  --range-focus-ring: rgba(129, 140, 248, 0.2);
+  --range-error-border: #f87171;
+  --range-error-thumb: #7f1d1d;
+  --range-success-border: #34d399;
+  --range-success-thumb: #064e3b;
+  --range-warning-border: #fbbf24;
+  --range-warning-thumb: #78350f;
+
+  /* -- File Input -- */
+  --file-label: #e2e8f0;
+  --file-button-bg: #1e293b;
+  --file-button-text: #a5b4fc;
+  --file-button-border: #6366f1;
+  --file-button-hover-bg: #1e1b4b;
+  --file-button-hover-border: #818cf8;
+  --file-dropzone-bg: #1e293b;
+  --file-dropzone-border: #374151;
+  --file-dropzone-hover-bg: #334155;
+  --file-dropzone-hover-border: #4b5563;
+  --file-dropzone-icon: #9ca3af;
+  --file-dropzone-text: #e2e8f0;
+  --file-dropzone-hint: #9ca3af;
+  --file-item-bg: #1e293b;
+  --file-item-border: #334155;
+  --file-item-hover-bg: #334155;
+  --file-icon: #9ca3af;
+  --file-filename: #f9fafb;
+  --file-filesize: #9ca3af;
+  --file-progress-bg: #374151;
+  --file-progress-fill: #6366f1;
+  --file-progress-text: #ffffff;
+  --file-remove-bg: #7f1d1d;
+  --file-remove-hover-bg: #991b1b;
+  --file-remove-icon: #fca5a5;
+  --file-error-border: #f87171;
+  --file-success-border: #34d399;
+  --file-warning-border: #fbbf24;
 
   /* -- Theme toggler -- */
   --theme-toggler-bg: #0f172a;

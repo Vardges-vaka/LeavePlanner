@@ -1,13 +1,19 @@
 import { useState } from "react";
-import { 
-  InputGeneric ,
-  Input_text,
-  Input_psw,
-  Input_email,
-  Input_number
-} from "../../../00_components/_components.index.js";
 import { ButtonGeneric } from "../../../00_components/_components.index.js";
 import "../styles/test_Input.css";
+import {
+  InputText,
+  InputPsw,
+  InputEmail,
+  InputNumber,
+  InputDate,
+  InputUrl,
+  InputTel,
+  InputSearch,
+  InputRange,
+  InputFile,
+  InputCheckbox,
+} from "./input/_inputTests.index.js";
 
 const Test_Input = () => {
   const [activeTab, setActiveTab] = useState("text");
@@ -15,113 +21,103 @@ const Test_Input = () => {
   return (
     <div>
       <h1 className="testPage_heading">Input Showcase</h1>
-      
+
       {/* Navigation Panel */}
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', flexWrap: 'wrap', borderBottom: '1px solid #e5e7eb', paddingBottom: '1rem' }}>
-         <ButtonGeneric 
-           text="Text Input" 
-           version={activeTab === "text" ? "primary" : "secondary"} 
-           onClick={() => setActiveTab("text")} 
-         />
-         <ButtonGeneric 
-           text="Password Input" 
-           version={activeTab === "psw" ? "primary" : "secondary"} 
-           onClick={() => setActiveTab("psw")} 
-         />
-         <ButtonGeneric 
-           text="Email Input" 
-           version={activeTab === "email" ? "primary" : "secondary"} 
-           onClick={() => setActiveTab("email")} 
-         />
-         <ButtonGeneric 
-           text="Number Input" 
-           version={activeTab === "number" ? "primary" : "secondary"} 
-           onClick={() => setActiveTab("number")} 
-         />
+      <div
+        style={{
+          display: "flex",
+          gap: "1rem",
+          marginBottom: "2rem",
+          flexWrap: "wrap",
+          borderBottom: "1px solid #e5e7eb",
+          paddingBottom: "1rem",
+        }}>
+        <ButtonGeneric
+          text="Text Input"
+          version={activeTab === "text" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("text")}
+        />
+        <ButtonGeneric
+          text="Password Input"
+          version={activeTab === "psw" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("psw")}
+        />
+        <ButtonGeneric
+          text="Email Input"
+          version={activeTab === "email" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("email")}
+        />
+        <ButtonGeneric
+          text="Number Input"
+          version={activeTab === "number" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("number")}
+        />
+        <ButtonGeneric
+          text="URL Input"
+          version={activeTab === "url" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("url")}
+        />{" "}
+        <ButtonGeneric
+          text="Tel Input"
+          version={activeTab === "tel" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("tel")}
+        />
+        <ButtonGeneric
+          text="Date Input"
+          version={activeTab === "date" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("date")}
+        />
+        <ButtonGeneric
+          text="Search Input"
+          version={activeTab === "search" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("search")}
+        />
+        <ButtonGeneric
+          text="Checkbox Input"
+          version={activeTab === "checkbox" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("checkbox")}
+        />
+        <ButtonGeneric
+          text="File Input"
+          version={activeTab === "file" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("file")}
+        />
+        <ButtonGeneric
+          text="Range Input"
+          version={activeTab === "range" ? "primary" : "secondary"}
+          onClick={() => setActiveTab("range")}
+        />
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', padding: '1rem', maxWidth: '400px' }}>
-        
-        {/* TEXT INPUTS TAB */}
-        {activeTab === "text" && (
-          <>
-            <Input_text 
-              label={{ text: "Default (Top Left)", position: "top-left" }}
-              placeholder="Default input"
-            />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "2rem",
+          padding: "1rem",
+          maxWidth: "400px",
+        }}>
+        {activeTab === "text" && <InputText />}
 
-            <Input_text 
-              label={{ text: "With Icons", position: "top-left" }}
-              placeholder="Search..."
-              icons={{
-                isActive: true,
-                leftIcon: { isActive: true, type: "lucid", content: "search" },
-              }}
-            />
+        {activeTab === "psw" && <InputPsw />}
 
-            <Input_text 
-              label={{ text: "Testing Missing Icon (Check Console!)", position: "top-left" }}
-              placeholder="Invalid icon name given"
-              icons={{
-                isActive: true,
-                leftIcon: { isActive: true, type: "lucid", content: "user" },
-              }}
-            />
-          </>
-        )}
+        {activeTab === "email" && <InputEmail />}
 
-        {/* PASSWORD INPUTS TAB */}
-        {activeTab === "psw" && (
-          <>
-            <Input_psw 
-              label={{ text: "Standard Password"}}
-              placeholder="Enter your password"
-            />
-          </>
-        )}
+        {activeTab === "number" && <InputNumber />}
 
-        {/* EMAIL INPUTS TAB */}
-        {activeTab === "email" && (
-          <>
-            <Input_email 
-              label={{ text: "Email Address" }}
-              placeholder="john@example.com"
-            />
+        {activeTab === "url" && <InputUrl />}
 
-            <Input_email 
-              label={{ text: "Work Email" }}
-              placeholder="jane@company.com"
-              validation="success"
-            />
-          </>
-        )}
+        {activeTab === "tel" && <InputTel />}
 
-        {/* NUMBER INPUTS TAB */}
-        {activeTab === "number" && (
-          <>
-            <Input_number 
-              label={{ text: "Age" }}
-              placeholder="e.g. 25"
-            />
+        {activeTab === "date" && <InputDate />}
 
-            <Input_number 
-              label={{ text: "Price (with custom right icon)" }}
-              placeholder="100"
-              defaultValue="100"
-              icons={{
-                isActive: true,
-                rightIcon: { isActive: true, type: "lucid", content: "DollarSign" }
-              }}
-            />
+        {activeTab === "search" && <InputSearch />}
 
-            <Input_number 
-              label={{ text: "Temperature" }}
-              placeholder="0"
-              size="l"
-            />
-          </>
-        )}
+        {activeTab === "range" && <InputRange />}
 
+        {activeTab === "file" && <InputFile />}
+
+        {activeTab === "checkbox" && <InputCheckbox />}
       </div>
     </div>
   );
