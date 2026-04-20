@@ -1,0 +1,240 @@
+.togglerGeneric_wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: max-content;
+}
+
+.togglerGeneric-fullWidth {
+  width: 100%;
+}
+
+.togglerGeneric-wrapper-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Label Positions */
+.togglerGeneric-label-top-left {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.togglerGeneric-label-top-right {
+  flex-direction: column;
+  align-items: flex-end;
+}
+.togglerGeneric-label-bottom-left {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
+.togglerGeneric-label-bottom-right {
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+.togglerGeneric-label-before {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.togglerGeneric-label-after {
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.togglerGeneric_label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--toggler-gen-label);
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.togglerGeneric-label-bottom-left .togglerGeneric_label,
+.togglerGeneric-label-bottom-right .togglerGeneric_label {
+  margin-bottom: 0;
+  margin-top: 0.25rem;
+}
+
+.togglerGeneric-label-before .togglerGeneric_label,
+.togglerGeneric-label-after .togglerGeneric_label {
+  margin: 0;
+}
+
+/* Hidden checkbox input */
+.togglerGeneric_input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Container / Track */
+.togglerGeneric_track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  background-color: var(--toggler-gen-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.togglerGeneric-rectangular .togglerGeneric_track {
+  border-radius: 4px;
+}
+
+.togglerGeneric_input:checked + .togglerGeneric_track {
+  background-color: var(--toggler-gen-bg-checked);
+}
+
+.togglerGeneric_track:hover:not(.togglerGeneric_track-disabled) {
+  background-color: var(--toggler-gen-bg-hover);
+}
+
+.togglerGeneric_input:checked + .togglerGeneric_track:hover:not(.togglerGeneric_track-disabled) {
+  background-color: var(--toggler-gen-bg-checked-hover);
+}
+
+.togglerGeneric_input:focus-visible + .togglerGeneric_track {
+  box-shadow: 0 0 0 3px var(--toggler-gen-focus-ring);
+  outline: none;
+}
+
+/* Custom validation outlines */
+.togglerGeneric_track-error {
+  box-shadow: 0 0 0 2px var(--toggler-gen-error-border);
+}
+.togglerGeneric_track-success {
+  box-shadow: 0 0 0 2px var(--toggler-gen-success-border);
+}
+.togglerGeneric_track-warning {
+  box-shadow: 0 0 0 2px var(--toggler-gen-warning-border);
+}
+
+.togglerGeneric_track-disabled {
+  background-color: var(--toggler-gen-bg-disabled) !important;
+  cursor: not-allowed;
+}
+
+/* Inner Text Area */
+.togglerGeneric_texts {
+  display: inline-grid;
+  grid-template-areas: "center";
+  align-items: center;
+  width: 100%;
+}
+
+.togglerGeneric_text {
+  grid-area: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Important for centering within wider tracks */
+  gap: 0.25rem;
+  white-space: nowrap;
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.togglerGeneric_text svg {
+  width: 1.25em;
+  height: 1.25em;
+  color: var(--toggler-custom-icon, inherit);
+  flex-shrink: 0;
+}
+
+.togglerGeneric_text-off {
+  opacity: 1;
+  color: var(--toggler-gen-text-off);
+}
+
+.togglerGeneric_text-on {
+  opacity: 0;
+  color: var(--toggler-custom-txt, var(--toggler-gen-text-on));
+}
+
+.togglerGeneric_input:checked + .togglerGeneric_track .togglerGeneric_text-off {
+  opacity: 0;
+}
+
+.togglerGeneric_input:checked + .togglerGeneric_track .togglerGeneric_text-on {
+  opacity: 1;
+}
+
+/* We don't need svg here because we handled it in .togglerGeneric_text svg */
+.togglerGeneric_innerIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Thumb / Knob */
+.togglerGeneric_thumb {
+  position: absolute;
+  left: 0.125rem;
+  background-color: var(--toggler-gen-thumb-bg);
+  border-radius: 50%;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.togglerGeneric-rectangular .togglerGeneric_thumb {
+  border-radius: 2px;
+}
+
+.togglerGeneric_track-disabled .togglerGeneric_thumb {
+  background-color: var(--toggler-gen-thumb-disabled);
+  box-shadow: none;
+}
+
+.togglerGeneric_input:checked + .togglerGeneric_track .togglerGeneric_thumb {
+  left: calc(100% - 0.125rem);
+  transform: translateX(-100%);
+}
+
+/* Sizing Variables */
+/* Left space covers thumb when it's off, right space covers thumb when it's on */
+
+/* xs */
+.togglerGeneric-xs .togglerGeneric_track { min-width: 1.75rem; height: 1rem; }
+.togglerGeneric-xs .togglerGeneric_thumb { width: 0.75rem; height: 0.75rem; top: 0.125rem; }
+.togglerGeneric-xs .togglerGeneric_text-on { padding: 0 calc(0.75rem + 0.25rem) 0 0.25rem; font-size: 0.55em; }
+.togglerGeneric-xs .togglerGeneric_text-off { padding: 0 0.25rem 0 calc(0.75rem + 0.25rem); font-size: 0.55em; }
+
+/* s */
+.togglerGeneric-s .togglerGeneric_track { min-width: 2.25rem; height: 1.25rem; }
+.togglerGeneric-s .togglerGeneric_thumb { width: 1rem; height: 1rem; top: 0.125rem; }
+.togglerGeneric-s .togglerGeneric_text-on { padding: 0 calc(1rem + 0.35rem) 0 0.35rem; font-size: 0.6em; }
+.togglerGeneric-s .togglerGeneric_text-off { padding: 0 0.35rem 0 calc(1rem + 0.35rem); font-size: 0.6em; }
+
+/* m (default) */
+.togglerGeneric-m .togglerGeneric_track { min-width: 2.75rem; height: 1.5rem; }
+.togglerGeneric-m .togglerGeneric_thumb { width: 1.25rem; height: 1.25rem; top: 0.125rem; }
+.togglerGeneric-m .togglerGeneric_text-on { padding: 0 calc(1.25rem + 0.4rem) 0 0.4rem; font-size: 0.65em; }
+.togglerGeneric-m .togglerGeneric_text-off { padding: 0 0.4rem 0 calc(1.25rem + 0.4rem); font-size: 0.65em; }
+
+/* l */
+.togglerGeneric-l .togglerGeneric_track { min-width: 3.25rem; height: 1.75rem; }
+.togglerGeneric-l .togglerGeneric_thumb { width: 1.5rem; height: 1.5rem; top: 0.125rem; }
+.togglerGeneric-l .togglerGeneric_text-on { padding: 0 calc(1.5rem + 0.45rem) 0 0.45rem; font-size: 0.75em; }
+.togglerGeneric-l .togglerGeneric_text-off { padding: 0 0.45rem 0 calc(1.5rem + 0.45rem); font-size: 0.75em; }
+
+/* xl */
+.togglerGeneric-xl .togglerGeneric_track { min-width: 4rem; height: 2rem; }
+.togglerGeneric-xl .togglerGeneric_thumb { width: 1.75rem; height: 1.75rem; top: 0.125rem; }
+.togglerGeneric-xl .togglerGeneric_text-on { padding: 0 calc(1.75rem + 0.6rem) 0 0.6rem; font-size: 0.85em; }
+.togglerGeneric-xl .togglerGeneric_text-off { padding: 0 0.6rem 0 calc(1.75rem + 0.6rem); font-size: 0.85em; }
+
+/* xxl */
+.togglerGeneric-xxl .togglerGeneric_track { min-width: 4.75rem; height: 2.5rem; }
+.togglerGeneric-xxl .togglerGeneric_thumb { width: 2.25rem; height: 2.25rem; top: 0.125rem; }
+.togglerGeneric-xxl .togglerGeneric_text-on { padding: 0 calc(2.25rem + 0.75rem) 0 0.75rem; font-size: 0.95em; }
+.togglerGeneric-xxl .togglerGeneric_text-off { padding: 0 0.75rem 0 calc(2.25rem + 0.75rem); font-size: 0.95em; }

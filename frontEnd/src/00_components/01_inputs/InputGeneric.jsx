@@ -67,6 +67,7 @@ import "./_styles/inputGeneric.css";
  * @param {string|number} [props.value] - Controlled value
  * @param {string|number} [props.defaultValue] - Uncontrolled default value
  * @param {string} [props.name] - Input name attribute
+ * @param {string} [props.data_*] - Any custom data attribute (ex: data_user="123" -> data-user="123", accessible via e.target.dataset.user)
  * @param {React.Ref} ref - Forwarded ref to the input element
  *
  * @returns {JSX.Element} Rendered input component
@@ -129,6 +130,7 @@ import "./_styles/inputGeneric.css";
  * @param {string|number} [props.value] - Controlled value
  * @param {string|number} [props.defaultValue] - Uncontrolled default value
  * @param {string} [props.name] - Input name attribute
+ * @param {string} [props.data_*] - Any custom data attribute (ex: data_user="123" -> data-user="123", accessible via e.target.dataset.user)
  * @param {React.Ref} ref - Forwarded ref to the input element
  *
  * @returns {JSX.Element} Rendered input component

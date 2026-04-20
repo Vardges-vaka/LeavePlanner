@@ -6,6 +6,7 @@ const InputText = () => {
       <Input_text
         label={{ text: "Default (Top Left)", position: "top-left" }}
         placeholder="Default input"
+        onChange={(e) => console.log(e)}
       />
 
       <Input_text

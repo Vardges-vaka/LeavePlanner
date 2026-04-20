@@ -524,6 +524,7 @@ Custom-styled checkbox with indeterminate state support.
 | `indeterminate`  | boolean | `false`   | Show indeterminate state    |
 | `checked`        | boolean | -         | Controlled checked state    |
 | `defaultChecked` | boolean | `false`   | Uncontrolled default state  |
+| `color`          | string  | -         | Custom hex/named color      |
 
 #### Usage Example
 
@@ -553,6 +554,13 @@ Custom-styled checkbox with indeterminate state support.
 <Checkbox
   label="Required field"
   validation="error"
+/>
+
+// Custom colors
+<Checkbox
+  label="Custom Red"
+  color="#ef4444"
+  defaultChecked
 />
 ```
 
@@ -590,6 +598,25 @@ All components support `disabled` prop:
 - No pointer events
 - Grayed out appearance
 - Maintains accessibility
+
+### Dataset Attributes (data_XXX)
+
+All generic input components (`InputGeneric`, `TextAreaGeneric`, `SelectGeneric`) support passing custom `data_` attributes through props, which map automatically to vanilla `data-` HTML attributes on the underlying input elements.
+
+**How it works**: Simply pass any prop starting with `data_`:
+```jsx
+<Input_text 
+  label={{ text: "User" }} 
+  data_user_id="123" 
+  data_role="admin" 
+  onChange={(e) => {
+    // React automatically camelCases data-* attributes in the DOMStringMap
+    console.log(e.target.dataset.userId); // "123"
+    console.log(e.target.dataset.role);   // "admin"
+  }}
+/>
+```
+This applies universally across standard inputs and the customized `SelectGeneric` dropdown, carrying properties safely all the way to `e.target.dataset` in event listeners.
 
 ---
 

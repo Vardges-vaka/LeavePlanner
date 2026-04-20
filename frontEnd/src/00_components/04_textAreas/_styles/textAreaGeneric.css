@@ -1,0 +1,227 @@
+/* ═══════════════════════════════════════════════════════════════
+ *  TextAreaGeneric Styles
+ * ═══════════════════════════════════════════════════════════════
+ *
+ *  All colors and sizes are defined as CSS variables in App.css
+ *  for centralized theming and easy customization.
+ * ═══════════════════════════════════════════════════════════════ */
+
+/* Wrapper - Contains label and textarea container */
+.textAreaGeneric_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--textarea-gen-label-gap, 0.5rem);
+  width: fit-content;
+}
+
+.textAreaGeneric-fullWidth {
+  width: 100%;
+}
+
+/* Label positioning variants */
+.textAreaGeneric-label-top-left,
+.textAreaGeneric-label-top-right {
+  flex-direction: column;
+}
+
+.textAreaGeneric-label-bottom-left,
+.textAreaGeneric-label-bottom-right {
+  flex-direction: column-reverse;
+}
+
+.textAreaGeneric-label-before {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.textAreaGeneric-label-after {
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+
+/* Label alignment within row layouts */
+.textAreaGeneric-label-top-right .textAreaGeneric_label,
+.textAreaGeneric-label-bottom-right .textAreaGeneric_label {
+  align-self: flex-end;
+}
+
+/* Label */
+.textAreaGeneric_label {
+  font-size: var(--textarea-gen-label-font-size, 0.875rem);
+  font-weight: var(--textarea-gen-label-font-weight, 500);
+  color: var(--textarea-gen-label-color, #374151);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.textAreaGeneric_label:hover {
+  color: var(--textarea-gen-label-hover-color, #111827);
+}
+
+/* Container - Wraps the textarea */
+.textAreaGeneric_container {
+  display: flex;
+  align-items: stretch;
+  background-color: var(--textarea-gen-bg, #ffffff);
+  border: 1px solid var(--textarea-gen-border, #d1d5db);
+  border-radius: var(--textarea-gen-border-radius, 0.375rem);
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.textAreaGeneric_container:hover:not(.textAreaGeneric_container-disabled) {
+  border-color: var(--textarea-gen-border-hover, #9ca3af);
+}
+
+.textAreaGeneric_container-focused {
+  border-color: var(--textarea-gen-border-focus, #3b82f6);
+  box-shadow: 0 0 0 3px var(--textarea-gen-focus-ring, rgba(59, 130, 246, 0.1));
+  outline: none;
+}
+
+/* Validation states */
+.textAreaGeneric_container-error {
+  border-color: var(--textarea-gen-border-error, #ef4444);
+}
+
+.textAreaGeneric_container-error.textAreaGeneric_container-focused {
+  border-color: var(--textarea-gen-border-error, #ef4444);
+  box-shadow: 0 0 0 3px
+    var(--textarea-gen-focus-ring-error, rgba(239, 68, 68, 0.1));
+}
+
+.textAreaGeneric_container-success {
+  border-color: var(--textarea-gen-border-success, #10b981);
+}
+
+.textAreaGeneric_container-success.textAreaGeneric_container-focused {
+  border-color: var(--textarea-gen-border-success, #10b981);
+  box-shadow: 0 0 0 3px
+    var(--textarea-gen-focus-ring-success, rgba(16, 185, 129, 0.1));
+}
+
+.textAreaGeneric_container-warning {
+  border-color: var(--textarea-gen-border-warning, #f59e0b);
+}
+
+.textAreaGeneric_container-warning.textAreaGeneric_container-focused {
+  border-color: var(--textarea-gen-border-warning, #f59e0b);
+  box-shadow: 0 0 0 3px
+    var(--textarea-gen-focus-ring-warning, rgba(245, 158, 11, 0.1));
+}
+
+/* Disabled state */
+.textAreaGeneric_container-disabled {
+  background-color: var(--textarea-gen-bg-disabled, #f3f4f6);
+  border-color: var(--textarea-gen-border-disabled, #e5e7eb);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.textAreaGeneric-wrapper-disabled .textAreaGeneric_label {
+  color: var(--textarea-gen-label-disabled, #9ca3af);
+  cursor: not-allowed;
+}
+
+/* Textarea element */
+.textAreaGeneric_textarea {
+  flex: 1;
+  padding: var(--textarea-gen-padding, 0.625rem 0.75rem);
+  font-size: var(--textarea-gen-font-size, 1rem);
+  font-family: inherit;
+  line-height: var(--textarea-gen-line-height, 1.5);
+  color: var(--textarea-gen-text, #111827);
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: vertical;
+  min-height: 3rem;
+}
+
+.textAreaGeneric_textarea::placeholder {
+  color: var(--textarea-gen-placeholder, #9ca3af);
+}
+
+.textAreaGeneric_textarea:disabled {
+  cursor: not-allowed;
+  color: var(--textarea-gen-text-disabled, #6b7280);
+}
+
+/* Resize control */
+.textAreaGeneric_textarea-resize-none {
+  resize: none;
+}
+
+.textAreaGeneric_textarea-resize-vertical {
+  resize: vertical;
+}
+
+.textAreaGeneric_textarea-resize-horizontal {
+  resize: horizontal;
+}
+
+.textAreaGeneric_textarea-resize-both {
+  resize: both;
+}
+
+/* Size variants */
+.textAreaGeneric-xs .textAreaGeneric_textarea {
+  padding: var(--textarea-gen-padding-xs, 0.375rem 0.5rem);
+  font-size: var(--textarea-gen-font-size-xs, 0.75rem);
+  min-height: 2rem;
+}
+
+.textAreaGeneric-xs .textAreaGeneric_label {
+  font-size: var(--textarea-gen-label-font-size-xs, 0.75rem);
+}
+
+.textAreaGeneric-s .textAreaGeneric_textarea {
+  padding: var(--textarea-gen-padding-s, 0.5rem 0.625rem);
+  font-size: var(--textarea-gen-font-size-s, 0.875rem);
+  min-height: 2.5rem;
+}
+
+.textAreaGeneric-s .textAreaGeneric_label {
+  font-size: var(--textarea-gen-label-font-size-s, 0.8125rem);
+}
+
+.textAreaGeneric-m .textAreaGeneric_textarea {
+  padding: var(--textarea-gen-padding-m, 0.625rem 0.75rem);
+  font-size: var(--textarea-gen-font-size-m, 1rem);
+  min-height: 3rem;
+}
+
+.textAreaGeneric-m .textAreaGeneric_label {
+  font-size: var(--textarea-gen-label-font-size-m, 0.875rem);
+}
+
+.textAreaGeneric-l .textAreaGeneric_textarea {
+  padding: var(--textarea-gen-padding-l, 0.75rem 1rem);
+  font-size: var(--textarea-gen-font-size-l, 1.125rem);
+  min-height: 3.5rem;
+}
+
+.textAreaGeneric-l .textAreaGeneric_label {
+  font-size: var(--textarea-gen-label-font-size-l, 1rem);
+}
+
+.textAreaGeneric-xl .textAreaGeneric_textarea {
+  padding: var(--textarea-gen-padding-xl, 1rem 1.25rem);
+  font-size: var(--textarea-gen-font-size-xl, 1.25rem);
+  min-height: 4rem;
+}
+
+.textAreaGeneric-xl .textAreaGeneric_label {
+  font-size: var(--textarea-gen-label-font-size-xl, 1.125rem);
+}
+
+.textAreaGeneric-xxl .textAreaGeneric_textarea {
+  padding: var(--textarea-gen-padding-xxl, 1.25rem 1.5rem);
+  font-size: var(--textarea-gen-font-size-xxl, 1.5rem);
+  min-height: 5rem;
+}
+
+.textAreaGeneric-xxl .textAreaGeneric_label {
+  font-size: var(--textarea-gen-label-font-size-xxl, 1.25rem);
+}

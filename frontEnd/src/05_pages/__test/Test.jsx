@@ -12,6 +12,7 @@ import {
   Test_Modal,
   Test_Select,
   Test_Toggler,
+  Test_RadioButtons
 } from "./comps/_comps.index.js";
 import "./styles/test.css";
 
@@ -37,6 +38,8 @@ const Test = () => {
         return <Test_Select />;
       case "toggler":
         return <Test_Toggler />;
+      case "radioButtons":
+        return <Test_RadioButtons />;
       default:
         return <Test_Button />;
     }
@@ -55,18 +58,12 @@ const Test = () => {
             text="Input"
             onClick={() => handleTestingStateChange("input")}
           />
-          <ButtonGeneric
-            text="Form"
-            onClick={() => handleTestingStateChange("form")}
-          />
+
           <ButtonGeneric
             text="TextArea"
             onClick={() => handleTestingStateChange("textArea")}
           />
-          <ButtonGeneric
-            text="Modal"
-            onClick={() => handleTestingStateChange("modal")}
-          />
+   
           <ButtonGeneric
             text="Select"
             onClick={() => handleTestingStateChange("select")}
@@ -74,6 +71,17 @@ const Test = () => {
           <ButtonGeneric
             text="Toggler"
             onClick={() => handleTestingStateChange("toggler")}
+          />    
+          <ButtonGeneric
+            text="RadioButtons"
+            onClick={() => handleTestingStateChange("radioButtons")}
+          />
+          <ButtonGeneric
+            text="Modal"
+            onClick={() => handleTestingStateChange("modal")}
+          />      <ButtonGeneric
+            text="Form"
+            onClick={() => handleTestingStateChange("form")}
           />
         </div>
 
@@ -82,6 +90,11 @@ const Test = () => {
       <Footer_public />
     </>
   );
-};
 
+
+
+};
+/*
+
+*/
 export default Test;

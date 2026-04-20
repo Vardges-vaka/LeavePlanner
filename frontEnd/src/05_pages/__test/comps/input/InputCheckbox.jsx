@@ -111,6 +111,17 @@ const InputCheckbox = () => {
         </div>
       </div>
 
+      {/* Custom Colors */}
+      <div>
+        <h3>Custom Colors</h3>
+        <div style={{ display: "flex", gap: "1rem", alignItems: "center", flexWrap: "wrap" }}>
+          <Checkbox defaultChecked label="Red" color="#ef4444" />
+          <Checkbox defaultChecked label="Green" color="#10b981" />
+          <Checkbox indeterminate label="Purple Indeterminate" color="#8b5cf6" />
+          <Checkbox defaultChecked label="Tomato Named" color="tomato" />
+        </div>
+      </div>
+
       {/* Real-world examples */}
       <div>
         <h3>Real-World Examples</h3>

@@ -1,0 +1,19 @@
+.radioButtons_wrapper {
+  display: flex;
+  gap: var(--radio-buttons-gap, 1rem);
+}
+
+.radioButtons-vertical {
+  flex-direction: column;
+}
+
+.radioButtons-horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center; /* Keep items aligned if horizontal */
+}
+
+.radioButtons_wrapper-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}

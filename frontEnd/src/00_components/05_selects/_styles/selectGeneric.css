@@ -1,0 +1,288 @@
+.selectGeneric_wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: max-content;
+}
+
+.selectGeneric-fullWidth {
+  width: 100%;
+}
+
+.selectGeneric-wrapper-disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Label Positions */
+.selectGeneric-label-top-left {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.selectGeneric-label-top-right {
+  flex-direction: column;
+  align-items: flex-end;
+}
+.selectGeneric-label-bottom-left {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
+.selectGeneric-label-bottom-right {
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+.selectGeneric-label-before {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.selectGeneric-label-after {
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.selectGeneric_label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--select-gen-label);
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+}
+
+.selectGeneric-label-bottom-left .selectGeneric_label,
+.selectGeneric-label-bottom-right .selectGeneric_label {
+  margin-bottom: 0;
+  margin-top: 0.25rem;
+}
+
+.selectGeneric-label-before .selectGeneric_label,
+.selectGeneric-label-after .selectGeneric_label {
+  margin: 0;
+}
+
+/* Container */
+.selectGeneric_container {
+  display: flex;
+  align-items: center;
+  background-color: var(--select-gen-bg);
+  border: 1px solid var(--select-gen-border);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.selectGeneric_container:hover:not(.selectGeneric_container-disabled) {
+  border-color: var(--select-gen-border-hover);
+}
+
+.selectGeneric_container-focused,
+.selectGeneric_container:focus-within {
+  border-color: var(--select-gen-focus-border);
+  box-shadow: 0 0 0 3px var(--select-gen-focus-ring);
+  outline: none;
+}
+
+.selectGeneric_container-error {
+  border-color: var(--select-gen-error-border);
+}
+.selectGeneric_container-error.selectGeneric_container-focused {
+  box-shadow: 0 0 0 3px var(--select-gen-error-ring);
+}
+.selectGeneric_container-success {
+  border-color: var(--select-gen-success-border);
+}
+.selectGeneric_container-success.selectGeneric_container-focused {
+  box-shadow: 0 0 0 3px var(--select-gen-success-ring);
+}
+.selectGeneric_container-warning {
+  border-color: #f59e0b; /* fallback warning */
+}
+
+.selectGeneric_container-disabled {
+  background-color: var(--select-gen-bg-disabled);
+  border-color: var(--select-gen-border-disabled);
+  cursor: not-allowed;
+}
+
+/* The actual select trigger (looks like input) */
+.selectGeneric_input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--select-gen-text);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+}
+
+.selectGeneric_placeholder {
+  color: var(--select-gen-placeholder);
+}
+
+.selectGeneric_container-disabled .selectGeneric_input {
+  color: var(--select-gen-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Icons within container */
+.selectGeneric_leftIconWrapper,
+.selectGeneric_rightIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--select-gen-icon);
+}
+
+.selectGeneric_iconStatic {
+  display: flex;
+  align-items: center;
+}
+
+.selectGeneric_iconButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  transition: color 0.15s ease;
+}
+
+.selectGeneric_iconButton:hover {
+  color: var(--select-gen-icon-hover);
+}
+
+.selectGeneric_iconStatic svg,
+.selectGeneric_iconButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Sizing */
+.selectGeneric-xs .selectGeneric_container { height: 1.75rem; }
+.selectGeneric-xs .selectGeneric_input { padding: 0 0.5rem; font-size: 0.75rem; }
+.selectGeneric-xs .selectGeneric_leftIconWrapper { padding-left: 0.5rem; }
+.selectGeneric-xs .selectGeneric_rightIconWrapper { padding-right: 0.5rem; }
+
+.selectGeneric-s .selectGeneric_container { height: 2rem; }
+.selectGeneric-s .selectGeneric_input { padding: 0 0.625rem; font-size: 0.875rem; }
+.selectGeneric-s .selectGeneric_leftIconWrapper { padding-left: 0.625rem; }
+.selectGeneric-s .selectGeneric_rightIconWrapper { padding-right: 0.625rem; }
+
+.selectGeneric-m .selectGeneric_container { height: 2.5rem; }
+.selectGeneric-m .selectGeneric_input { padding: 0 0.75rem; font-size: 1rem; }
+.selectGeneric-m .selectGeneric_leftIconWrapper { padding-left: 0.75rem; }
+.selectGeneric-m .selectGeneric_rightIconWrapper { padding-right: 0.75rem; }
+
+.selectGeneric-l .selectGeneric_container { height: 3rem; }
+.selectGeneric-l .selectGeneric_input { padding: 0 0.875rem; font-size: 1.125rem; }
+.selectGeneric-l .selectGeneric_leftIconWrapper { padding-left: 0.875rem; }
+.selectGeneric-l .selectGeneric_rightIconWrapper { padding-right: 0.875rem; }
+
+.selectGeneric-xl .selectGeneric_container { height: 3.5rem; }
+.selectGeneric-xl .selectGeneric_input { padding: 0 1rem; font-size: 1.25rem; }
+.selectGeneric-xl .selectGeneric_leftIconWrapper { padding-left: 1rem; }
+.selectGeneric-xl .selectGeneric_rightIconWrapper { padding-right: 1rem; }
+
+.selectGeneric-xxl .selectGeneric_container { height: 4rem; }
+.selectGeneric-xxl .selectGeneric_input { padding: 0 1.25rem; font-size: 1.5rem; }
+.selectGeneric-xxl .selectGeneric_leftIconWrapper { padding-left: 1.25rem; }
+.selectGeneric-xxl .selectGeneric_rightIconWrapper { padding-right: 1.25rem; }
+
+/* Dropdown Menu */
+.selectGeneric_menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  background-color: var(--select-gen-menu-bg);
+  border: 1px solid var(--select-gen-menu-border);
+  border-radius: 6px;
+  box-shadow: var(--select-gen-menu-shadow);
+  z-index: 50;
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+.selectGeneric_menu-top {
+  top: auto;
+  bottom: calc(100% + 4px);
+}
+
+.selectGeneric_option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  color: var(--select-gen-text);
+  transition: background-color 0.15s ease;
+  font-size: 0.95rem;
+}
+
+.selectGeneric_option-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selectGeneric_option:hover:not(.selectGeneric_option-disabled) {
+  background-color: var(--select-gen-option-hover);
+}
+
+.selectGeneric_option-active {
+  background-color: var(--select-gen-option-active);
+  font-weight: 500;
+}
+
+.selectGeneric_option-disabled {
+  color: var(--select-gen-text-disabled);
+  background-color: var(--select-gen-option-disabled);
+  cursor: not-allowed;
+}
+
+/* Option Icons */
+.selectGeneric_optionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.selectGeneric_optionIcon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.selectGeneric_optionIconButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--select-gen-icon);
+  transition: color 0.15s ease;
+  display: flex;
+  align-items: center;
+}
+
+.selectGeneric_optionIconButton:hover {
+  color: var(--select-gen-icon-hover);
+}

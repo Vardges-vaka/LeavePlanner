@@ -98,6 +98,61 @@
   --input-gen-success-hover: #059669;
   --input-gen-success-ring: rgba(16, 185, 129, 0.2);
 
+  /* -- SelectGeneric -- */
+  --select-gen-label: #4b5563;
+  --select-gen-bg: #ffffff;
+  --select-gen-border: #d1d5db;
+  --select-gen-border-hover: #9ca3af;
+  --select-gen-text: #111827;
+  --select-gen-placeholder: #9ca3af;
+  --select-gen-icon: #4b5563;
+  --select-gen-icon-hover: #4f46e5;
+  --select-gen-focus-ring: rgba(79, 70, 229, 0.2);
+  --select-gen-focus-border: #4f46e5;
+  --select-gen-bg-disabled: #f3f4f6;
+  --select-gen-border-disabled: #d1d5db;
+  --select-gen-text-disabled: #9ca3af;
+  --select-gen-error-border: #ef4444;
+  --select-gen-error-hover: #dc2626;
+  --select-gen-error-ring: rgba(239, 68, 68, 0.2);
+  --select-gen-success-border: #10b981;
+  --select-gen-success-hover: #059669;
+  --select-gen-success-ring: rgba(16, 185, 129, 0.2);
+  --select-gen-menu-bg: #ffffff;
+  --select-gen-menu-border: #d1d5db;
+  --select-gen-menu-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --select-gen-option-hover: #f3f4f6;
+  --select-gen-option-active: #eef2ff;
+  --select-gen-option-disabled: #f9fafb;
+
+  /* -- TextAreaGeneric -- */
+  --textarea-gen-label-color: #374151;
+  --textarea-gen-label-hover-color: #111827;
+  --textarea-gen-label-font-size: 0.875rem;
+  --textarea-gen-label-font-weight: 500;
+  --textarea-gen-label-gap: 0.5rem;
+  --textarea-gen-bg: #ffffff;
+  --textarea-gen-border: #d1d5db;
+  --textarea-gen-border-hover: #9ca3af;
+  --textarea-gen-border-focus: #3b82f6;
+  --textarea-gen-text: #111827;
+  --textarea-gen-placeholder: #9ca3af;
+  --textarea-gen-focus-ring: rgba(59, 130, 246, 0.1);
+  --textarea-gen-bg-disabled: #f3f4f6;
+  --textarea-gen-border-disabled: #e5e7eb;
+  --textarea-gen-text-disabled: #6b7280;
+  --textarea-gen-label-disabled: #9ca3af;
+  --textarea-gen-border-error: #ef4444;
+  --textarea-gen-focus-ring-error: rgba(239, 68, 68, 0.1);
+  --textarea-gen-border-success: #10b981;
+  --textarea-gen-focus-ring-success: rgba(16, 185, 129, 0.1);
+  --textarea-gen-border-warning: #f59e0b;
+  --textarea-gen-focus-ring-warning: rgba(245, 158, 11, 0.1);
+  --textarea-gen-padding: 0.625rem 0.75rem;
+  --textarea-gen-font-size: 1rem;
+  --textarea-gen-line-height: 1.5;
+  --textarea-gen-border-radius: 0.375rem;
+
   /* -- Checkbox -- */
   --checkbox-border: #d1d5db;
   --checkbox-border-hover: #9ca3af;
@@ -116,6 +171,36 @@
   --checkbox-success-bg: #10b981;
   --checkbox-warning-border: #f59e0b;
   --checkbox-warning-bg: #f59e0b;
+
+  /* -- TogglerGeneric -- */
+  --toggler-gen-bg: #d1d5db;
+  --toggler-gen-bg-hover: #9ca3af;
+  --toggler-gen-bg-checked: #3b82f6;
+  --toggler-gen-bg-checked-hover: #2563eb;
+  --toggler-gen-thumb-bg: #ffffff;
+  --toggler-gen-bg-disabled: #f3f4f6;
+  --toggler-gen-thumb-disabled: #e5e7eb;
+  --toggler-gen-label: #374151;
+  --toggler-gen-focus-ring: rgba(59, 130, 246, 0.4);
+  --toggler-gen-text-on: #ffffff;
+  --toggler-gen-text-off: #ffffff;
+  --toggler-gen-error-border: #ef4444;
+  --toggler-gen-success-border: #10b981;
+  --toggler-gen-warning-border: #f59e0b;
+
+  /* -- RadioButtons -- */
+  --radio-buttons-gap: 1rem;
+
+  /* -- ModalGeneric -- */
+  --modal-gen-overlay-bg: rgba(0, 0, 0, 0.4);
+  --modal-gen-bg: #ffffff;
+  --modal-gen-border: #e5e7eb;
+  --modal-gen-title: #111827;
+  --modal-gen-text: #4b5563;
+  --modal-gen-footer-bg: #f9fafb;
+  --modal-gen-close-icon: #9ca3af;
+  --modal-gen-close-hover-bg: #f3f4f6;
+  --modal-gen-close-hover-icon: #374151;
 
   /* -- Checkbox Sizes -- */
   --checkbox-xs-box: 1rem;
@@ -360,6 +445,54 @@
   --input-gen-success-hover: #10b981;
   --input-gen-success-ring: rgba(52, 211, 153, 0.2);
 
+  /* -- SelectGeneric -- */
+  --select-gen-label: #9ca3af;
+  --select-gen-bg: #1f2937;
+  --select-gen-border: #374151;
+  --select-gen-border-hover: #4b5563;
+  --select-gen-text: #f9fafb;
+  --select-gen-placeholder: #9ca3af;
+  --select-gen-icon: #9ca3af;
+  --select-gen-icon-hover: #818cf8;
+  --select-gen-focus-ring: rgba(129, 140, 248, 0.2);
+  --select-gen-focus-border: #818cf8;
+  --select-gen-bg-disabled: #111827;
+  --select-gen-border-disabled: #1f2937;
+  --select-gen-text-disabled: #6b7280;
+  --select-gen-error-border: #f87171;
+  --select-gen-error-hover: #ef4444;
+  --select-gen-error-ring: rgba(248, 113, 113, 0.2);
+  --select-gen-success-border: #34d399;
+  --select-gen-success-hover: #10b981;
+  --select-gen-success-ring: rgba(52, 211, 153, 0.2);
+  --select-gen-menu-bg: #1f2937;
+  --select-gen-menu-border: #374151;
+  --select-gen-menu-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --select-gen-option-hover: #374151;
+  --select-gen-option-active: #312e81;
+  --select-gen-option-disabled: #111827;
+
+  /* -- TextAreaGeneric -- */
+  --textarea-gen-label-color: #9ca3af;
+  --textarea-gen-label-hover-color: #e2e8f0;
+  --textarea-gen-bg: #1f2937;
+  --textarea-gen-border: #374151;
+  --textarea-gen-border-hover: #4b5563;
+  --textarea-gen-border-focus: #818cf8;
+  --textarea-gen-text: #f9fafb;
+  --textarea-gen-placeholder: #9ca3af;
+  --textarea-gen-focus-ring: rgba(129, 140, 248, 0.2);
+  --textarea-gen-bg-disabled: #111827;
+  --textarea-gen-border-disabled: #1f2937;
+  --textarea-gen-text-disabled: #6b7280;
+  --textarea-gen-label-disabled: #6b7280;
+  --textarea-gen-border-error: #f87171;
+  --textarea-gen-focus-ring-error: rgba(248, 113, 113, 0.2);
+  --textarea-gen-border-success: #34d399;
+  --textarea-gen-focus-ring-success: rgba(52, 211, 153, 0.2);
+  --textarea-gen-border-warning: #fbbf24;
+  --textarea-gen-focus-ring-warning: rgba(251, 191, 36, 0.2);
+
   /* -- Checkbox -- */
   --checkbox-border: #374151;
   --checkbox-border-hover: #4b5563;
@@ -378,6 +511,36 @@
   --checkbox-success-bg: #34d399;
   --checkbox-warning-border: #fbbf24;
   --checkbox-warning-bg: #fbbf24;
+
+  /* -- TogglerGeneric -- */
+  --toggler-gen-bg: #374151;
+  --toggler-gen-bg-hover: #4b5563;
+  --toggler-gen-bg-checked: #6366f1;
+  --toggler-gen-bg-checked-hover: #818cf8;
+  --toggler-gen-thumb-bg: #ffffff;
+  --toggler-gen-bg-disabled: #111827;
+  --toggler-gen-thumb-disabled: #1f2937;
+  --toggler-gen-label: #e2e8f0;
+  --toggler-gen-focus-ring: rgba(129, 140, 248, 0.4);
+  --toggler-gen-text-on: #ffffff;
+  --toggler-gen-text-off: #9ca3af;
+  --toggler-gen-error-border: #f87171;
+  --toggler-gen-success-border: #34d399;
+  --toggler-gen-warning-border: #fbbf24;
+
+  /* -- RadioButtons -- */
+  --radio-buttons-gap: 1rem;
+
+  /* -- ModalGeneric -- */
+  --modal-gen-overlay-bg: rgba(0, 0, 0, 0.7);
+  --modal-gen-bg: #1e293b;
+  --modal-gen-border: #334155;
+  --modal-gen-title: #f9fafb;
+  --modal-gen-text: #9ca3af;
+  --modal-gen-footer-bg: #0f172a;
+  --modal-gen-close-icon: #9ca3af;
+  --modal-gen-close-hover-bg: #334155;
+  --modal-gen-close-hover-icon: #f9fafb;
 
   /* -- Range Slider -- */
   --range-track-bg: #374151;

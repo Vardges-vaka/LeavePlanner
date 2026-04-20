@@ -1,9 +1,13 @@
 /* ── Test page — ButtonGeneric showcase ─────────────────── */
 
 .testPage {
-  max-width: 1000px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
 }
 
 .testPage_heading {

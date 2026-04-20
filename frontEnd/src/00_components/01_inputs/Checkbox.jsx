@@ -57,6 +57,7 @@ import "./_styles/checkbox.css";
  * @param {string} [props.id] - Input ID for label association
  * @param {string} [props.name] - Input name attribute
  * @param {string} [props.value] - Input value attribute
+ * @param {string} [props.color] - Custom override for the checked background/border color
  * @param {React.Ref} ref - Forwarded ref to the input element
  *
  * @returns {JSX.Element} Rendered checkbox
@@ -115,6 +116,7 @@ const Checkbox = forwardRef(function Checkbox(props, ref) {
     id,
     name,
     value,
+    color,
     ...restProps
   } = props;
 
@@ -156,6 +158,12 @@ const Checkbox = forwardRef(function Checkbox(props, ref) {
   const CheckIcon = icons.Check;
   const MinusIcon = icons.Minus;
 
+  const customStyle = {};
+  if ((isChecked || indeterminate) && color && !disabled && !validation) {
+    customStyle.backgroundColor = color;
+    customStyle.borderColor = color;
+  }
+
   return (
     <label className={wrapperClasses}>
       <input
@@ -170,7 +178,7 @@ const Checkbox = forwardRef(function Checkbox(props, ref) {
         value={value}
         {...restProps}
       />
-      <span className={checkboxClasses}>
+      <span className={checkboxClasses} style={customStyle}>
         {indeterminate ? (
           <MinusIcon className="checkbox_icon" aria-hidden="true" />
         ) : (
@@ -198,6 +206,7 @@ Checkbox.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
+  color: PropTypes.string,
 };
 
 Checkbox.displayName = "Checkbox";
