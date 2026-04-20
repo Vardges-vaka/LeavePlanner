@@ -12,7 +12,7 @@ import {
   Test_Modal,
   Test_Select,
   Test_Toggler,
-  Test_RadioButtons
+  Test_RadioButtons,
 } from "./comps/_comps.index.js";
 import "./styles/test.css";
 
@@ -58,12 +58,10 @@ const Test = () => {
             text="Input"
             onClick={() => handleTestingStateChange("input")}
           />
-
           <ButtonGeneric
             text="TextArea"
             onClick={() => handleTestingStateChange("textArea")}
           />
-   
           <ButtonGeneric
             text="Select"
             onClick={() => handleTestingStateChange("select")}
@@ -71,7 +69,7 @@ const Test = () => {
           <ButtonGeneric
             text="Toggler"
             onClick={() => handleTestingStateChange("toggler")}
-          />    
+          />
           <ButtonGeneric
             text="RadioButtons"
             onClick={() => handleTestingStateChange("radioButtons")}
@@ -79,7 +77,8 @@ const Test = () => {
           <ButtonGeneric
             text="Modal"
             onClick={() => handleTestingStateChange("modal")}
-          />      <ButtonGeneric
+          />{" "}
+          <ButtonGeneric
             text="Form"
             onClick={() => handleTestingStateChange("form")}
           />
@@ -90,11 +89,6 @@ const Test = () => {
       <Footer_public />
     </>
   );
-
-
-
 };
-/*
 
-*/
 export default Test;
